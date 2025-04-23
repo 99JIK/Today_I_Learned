@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunktoday_i_learn=self.webpackChunktoday_i_learn||[]).push([[1903],{1912:e=>{e.exports=JSON.parse('{"blogBasePath":"/Today_I_Learned/en/blog","blogTitle":"Blog","authorsListPath":"/Today_I_Learned/en/blog/authors"}')}}]);
