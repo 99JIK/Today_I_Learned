@@ -7,7 +7,7 @@ const config: Config = {
   title: '나의 TIL 기록 저장소', // 1. 사이트 제목 수정
   tagline: '오늘 내가 배운 것들을 기록합니다.', // 2. 사이트 부제목(태그라인) 수정
   favicon: 'img/favicon.ico', // 파비콘 이미지 경로 (필요시 static/img 폴더에 이미지 추가)
-
+  trailingSlash: false,
   // 3. GitHub Pages 배포 URL 설정 (매우 중요!)
   url: 'https://99jik.github.io', // 본인의 GitHub 사용자 이름으로 변경
   // 4. Base URL 설정 (매우 중요!)
