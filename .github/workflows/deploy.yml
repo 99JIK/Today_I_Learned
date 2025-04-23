@@ -1,0 +1,49 @@
+# .github/workflows/deploy.yml
+
+name: Deploy Docusaurus to GitHub Pages # 워크플로우의 이름
+
+on:
+  push:
+    branches:
+      - main # main 브랜치에 push 이벤트가 발생했을 때만 실행
+
+permissions:
+  contents: write # gh-pages 브랜치에 푸시하기 위한 쓰기 권한 설정
+
+jobs:
+  deploy:
+    name: Deploy to GitHub Pages # 작업의 이름
+    runs-on: ubuntu-latest # 실행 환경 (Ubuntu 최신 버전)
+    steps:
+      - name: Checkout # 1단계: 소스 코드 체크아웃
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0 # 모든 히스토리 가져오기 (마지막 수정일 등 표시 위함)
+
+      - name: Set up Node.js # 2단계: Node.js 환경 설정
+        uses: actions/setup-node@v4
+        with:
+          node-version: '22' # 사용할 Node.js 버전 (로컬 환경과 맞추는 것이 좋음, 18 또는 20 등)
+          cache: 'npm' # npm 캐시 사용 설정
+
+      - name: Install dependencies # 3단계: 의존성 패키지 설치 (npm ci 사용 권장)
+        run: npm ci
+
+      - name: Build Docusaurus website # 4단계: Docusaurus 사이트 빌드
+        run: npm run build
+
+      # 5단계: GitHub Pages에 배포
+      # peaceiris/actions-gh-pages 액션을 사용하여 build 폴더 내용을 gh-pages 브랜치로 푸시
+      - name: Deploy to GitHub Pages
+        uses: peaceiris/actions-gh-pages@v4
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }} # 액션에 내장된 GitHub 토큰 사용 (자동 인증)
+          publish_branch: gh-pages # 배포할 브랜치 이름
+          publish_dir: ./build # 배포할 디렉토리 (Docusaurus 빌드 결과물)
+          # 배포 커밋에 사용할 사용자 정보 (봇으로 표시됨)
+          user_name: 'github-actions[bot]'
+          user_email: 'github-actions[bot]@users.noreply.github.com'
+          # 이전 배포 내용 유지 여부 (선택 사항, false면 매번 새로 덮어씀)
+          # keep_files: false
+          # 특정 커밋 메시지 사용 (선택 사항)
+          commit_message: Deploy website - ${{ github.sha }}
