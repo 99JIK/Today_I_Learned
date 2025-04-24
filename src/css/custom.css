@@ -28,3 +28,19 @@
   --ifm-color-primary-lightest: #4fddbf;
   --docusaurus-highlighted-code-line-bg: rgba(0, 0, 0, 0.3);
 }
+
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;700&display=swap');
+
+:root {
+  /* ... 색상 변수들 ... */
+
+  /* 2. 기본 폰트 변경 */
+  --ifm-font-family-base: 'Noto Sans KR', sans-serif; /* 기본 폰트 */
+  --ifm-font-family-monospace: 'Consolas', 'Menlo', 'Courier', monospace; /* 코드 폰트 */
+}
+
+/* 필요하다면 특정 요소 폰트 직접 지정 */
+h1, h2, h3, h4, h5, h6 {
+  /* 제목 폰트만 다르게 할 수도 있음 */
+  /* font-family: 'Another Font', sans-serif; */
+}
