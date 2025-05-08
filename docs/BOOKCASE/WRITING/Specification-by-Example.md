@@ -2,7 +2,7 @@
 
 ## 핵심 이점
 
-<img src="file.excalidraw (4).svg" alt=" [그림 1] 올바른 제품을 만드는 데 기여하는 예제를 활용한 명제" class="gitbook-drawing">
+![file.excalidraw (4)](file.excalidraw (4).svg)
 
 올바른 제품을 효과적으로 만들기 위한 소프트웨어 개발 실천법에는 아래와 같은 사항들이 보장되어야 한다.
 
@@ -22,7 +22,7 @@
 * 최소한의 유지보수 비용으로 문서를 적절하고 신뢰할 수 있게 유지한다.
 * 앞으로 수행해야 할 작업에 관한 정보를 적기에 공급할 수 있게 모든 것을 짧은 Iteration과 흐름 기반의 Process에 맞춘다.
 
-<img src="file.excalidraw (5).svg" alt="[그림 2] 올바른  문서화를 위한 핵심 요소" class="gitbook-drawing">
+![file.excalidraw (5)](file.excalidraw (5).svg)
 
 예제를 활용한 명제를 도입한 후 효과는 아래와 같다.
 
@@ -51,7 +51,7 @@
 프로젝트나 마일스톤의 초기 단계처럼 일할 수 있는 준비가 됐을 때 목표로부터 작업할 범위를 도출한다.
 이터레이션의 시작과 같이 구현을 시작할 준비가 됐을 때만 해당 면세를 상세화한다.
 
-<img src="file.excalidraw (6).svg" alt="[그림 3] 예제를 활용한 명세의 주요 프로세스 패턴" class="gitbook-drawing">
+![file.excalidraw (6)](file.excalidraw (6).svg)
 
 ### 목표에서 범위 도출하기
 
