@@ -1,4 +1,4 @@
-# 이공계 Technical Writing 가이드
+# Technical Writing Guide
 
 ## Technical Writing이란
 
