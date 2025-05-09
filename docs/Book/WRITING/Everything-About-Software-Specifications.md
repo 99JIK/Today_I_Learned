@@ -63,7 +63,7 @@
 
 단, 스펙의 양과 작성법은 프로젝트 성격에 따라 달라질 수 있다.
 
-#### 소프트웨어를 만들어보기 전에는 천재도 그 내용을 다 알  수 없다
+#### 소프트웨어를 만들어보기 전에는 천재도 그 내용을 다 알 수 없다
 
 일리 있으나 100% 모든 것을 아는 것만 프로젝트로 수행하지 않는다.
 성공을 장담할 수 없는 알고리즘이나 한 번도 사용해보지 않은 상용 라이브러리로 소프트웨어를 개발하기도 한다.
@@ -135,7 +135,7 @@
 
 프로젝트의 모든 이해관계자가 스펙을 참조하거나 작성에 참여해 스펙은 다시 여러 이해관계자들에게 전달되어 본연의 역할을 수행한다.
 
-![file.excalidraw (2)](./img/file.excalidraw (2).svg)
+![file.excalidraw (2)](./img/Everything-About-Software-Specifications/file.excalidraw(2).svg)
 
 #### 고객, 마케팅, 영업팀은 어떤 제품이 만들어질지 미리 알 수 있다
 
@@ -166,9 +166,8 @@
 소프트웨어 전체 아키텍처가 분석, 설계에서 정해져서 개발자에게 한정된 재량만 주어져야 한다.
 그렇게 해야 의도한 대로 소프트웨어가 개발된다.
 
-![](./img/Everything-About-Software-Specifications/file.excalidraw (2).svg)
 
-![file.excalidraw (3)](./img/file.excalidraw (3).svg)
+![file.excalidraw (3)](./img/Everything-About-Software-Specifications/file.excalidraw(3).svg)
 
 #### 테스트팀은 스펙을 통해 테스트 계획 및 테스트 케이스를 작성한다
 
