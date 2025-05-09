@@ -135,7 +135,7 @@
 
 프로젝트의 모든 이해관계자가 스펙을 참조하거나 작성에 참여해 스펙은 다시 여러 이해관계자들에게 전달되어 본연의 역할을 수행한다.
 
-![file.excalidraw (2)](file.excalidraw (2).svg)
+![file.excalidraw (2)](img/Everything-About-Software-Specifications/file.excalidraw (2).svg)
 
 #### 고객, 마케팅, 영업팀은 어떤 제품이 만들어질지 미리 알 수 있다
 
@@ -166,7 +166,7 @@
 소프트웨어 전체 아키텍처가 분석, 설계에서 정해져서 개발자에게 한정된 재량만 주어져야 한다.
 그렇게 해야 의도한 대로 소프트웨어가 개발된다.
 
-![file.excalidraw (3)](file.excalidraw (3).svg)
+![file.excalidraw (3)](img/Everything-About-Software-Specifications/file.excalidraw (3).svg)
 
 #### 테스트팀은 스펙을 통해 테스트 계획 및 테스트 케이스를 작성한다
 
