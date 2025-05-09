@@ -1,6 +1,6 @@
 {
-  "label": "BOOKCASE",
-  "position": 1,
+  "label": "Book",
+  "position": 2,
   "link": {
     "type": "generated-index",
     "description": "책을 읽고 정리한 내용입니다."

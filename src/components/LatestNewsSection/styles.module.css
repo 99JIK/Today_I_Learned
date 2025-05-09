@@ -2,7 +2,7 @@
 /* --- 4. 최신 학습 & 소식 (LatestNewsSection) 스타일 --- */
 .latestNewsSection {
   padding: 4rem 1.5rem 5rem; 
-  background-color: var(--ifm-background-surface-color); /* 수정: 이 변수가 올바른 색을 참조하도록 함 */
+  background-color: var(--ifm-background-color); /* 수정: 이 변수가 올바른 색을 참조하도록 함 */
 }
 
 .newsItemsContainer {
