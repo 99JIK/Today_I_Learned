@@ -1,5 +1,5 @@
 ---
-title: "AI Adoption for Collaboration\: Factors Influencing Inclusive Learning Adoption in Higher Education"
+title: "AI Adoption for Collaboration: Factors Influencing Inclusive Learning Adoption in Higher Education"
 date: 2025-05-12
 description: "협업을 위한 AI 채택: 고등 교육에서 포용적 학습 채텍에 영향을 미치는 요인"
 keywords: [Artificial Intelligence, Artificial Intelligence Adoption, Collaboration, Inclusive Learning, Higher Education, Technology Acceptance, Student Perceptions]
@@ -63,9 +63,9 @@ AI 기반 포용적 학습은 지능형 튜터링 시스템(ITS), AI 기반 보�
 본 연구는 TAM을 기반으로 AI 결과물의 인식된 품질(Perceived Quality of AI Output), AI 결과물에 대한 인식된 신뢰(Perceived Trust of AI Output), AI 사용 친숙도(Familiarity with AI Use), 교육 서비스 품질(Quality of Educational Services), 참여 효능감(Efficacy for Engagement), 인식된 사용 용이성(Perceived ease of use), 인식된 유용성(Perceived Usefulness), AI 사용 행동 의도(Behavioural Intention to Use AI), 그리고 최종적으로 협업을 위한 AI 채택(AI Adoption for Collaboration) 간의 관계를 설명하는 모델을 제안한다.
 각 구성 요소 간의 가설적 관계(H1-H14)가 설정되었다. (그림 1, 2 참조)
 
-![그림 1](./img/AI-Adoption-for-Collaboration-Factors-Influencing-Inclusive-Lerning-Adoption-in-Higher-Education/image-20250512133652568.png)
+![그림 1](./img/AI-Adoption-for-Collaboration-Factors-Influencing-Inclusive-Learning-Adoption-in-Higher-Education/image-20250512142506124.png)
 
-![그림 2](./img/AI-Adoption-for-Collaboration-Factors-Influencing-Inclusive-Lerning-Adoption-in-Higher-Education/image-20250512133703845.png)
+![그림 2](./img/AI-Adoption-for-Collaboration-Factors-Influencing-Inclusive-Learning-Adoption-in-Higher-Education/image-20250512142453907.png)
 
 ### 연구 방법론 (Methodology)
 
