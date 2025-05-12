@@ -1,5 +1,5 @@
 ---
-title: The Future of Software Testing: A Review of Trends, Challenges, and Opportunities
+title: The Future of Software Testing\: A Review of Trends, Challenges, and Opportunities
 date: 2025.04.15
 description: 소프트웨어 테스팅의 미래: 동향, 과제 및 기회 검토
 keywords: [Software Testing, Artificial Intelligence, Internet of Things, Cloud Infrastructure, Application Programming Interfaces, Automation Tools]

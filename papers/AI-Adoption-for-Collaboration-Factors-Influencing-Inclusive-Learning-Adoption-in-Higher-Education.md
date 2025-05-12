@@ -1,5 +1,5 @@
 ---
-title: AI Adoption for Collaboration: Factors Influencing Inclusive Learning Adoption in Higher Education
+title: AI Adoption for Collaboration\: Factors Influencing Inclusive Learning Adoption in Higher Education
 date: 2025-05-12
 description: 협업을 위한 AI 채택: 고등 교육에서 포용적 학습 채텍에 영향을 미치는 요인
 keywords: [Artificial Intelligence, Artificial Intelligence Adoption, Collaboration, Inclusive Learning, Higher Education, Technology Acceptance, Student Perceptions]
