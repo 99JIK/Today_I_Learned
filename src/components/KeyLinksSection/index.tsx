@@ -10,22 +10,22 @@ import Link from '@docusaurus/Link';
 export default function KeyLinksSection(): ReactNode {
   const keyLinks = [
     {
-      title: '핵심 문서 가이드',
-      description: '프로젝트의 핵심 개념과 사용법을 빠르게 익혀보세요.',
-      link: '/docs/category/핵심-가이드', // 실제 문서 경로로 수정하세요
-      icon: '📚', // 또는 SVG 아이콘 컴포넌트
+      title: '반갑습니다!',
+      description: '작성자의 정보를 확인할 수 있습니다.',
+      link: '/Who-am-I', // 실제 문서 경로로 수정하세요
+      icon: '🙋🏻‍♂️', // 또는 SVG 아이콘 컴포넌트
     },
     {
-      title: 'API 레퍼런스',
-      description: '상세한 API 정보를 찾아보고 활용해보세요.',
-      link: '/docs/api-reference', // 실제 문서 경로로 수정하세요
-      icon: '⚙️',
+      title: 'JIK\'s TIL 요약',
+      description: '빠르게 이 사이트의 구조를 확인해보세요.',
+      link: '/How-to-Read', // 실제 문서 경로로 수정하세요
+      icon: '🕵🏻',
     },
     {
-      title: '튜토리얼 & 예제',
-      description: '따라 하면서 배울 수 있는 다양한 튜토리얼을 제공합니다.',
-      link: '/docs/category/튜토리얼', // 실제 문서 경로로 수정하세요
-      icon: '💡',
+      title: '키워드 별 논문',
+      description: '키워드 별로 논문을 찾아보세요.',
+      link: '/papers/tags', // 실제 문서 경로로 수정하세요
+      icon: '🧑🏻‍🎓',
     },
   ];
 

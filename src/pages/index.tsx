@@ -26,8 +26,8 @@ function HomepageHeader() {
         <div className={styles.buttons}>
           <Link
             className="button button--secondary button--lg" // 이 버튼 스타일은 index.module.css에서 :global(.button)으로 제어됩니다.
-            to="/docs"> {/* 예시: 블로그 첫 페이지로 연결 */}
-            정리된 문서 확인하기⏱️
+            to="/docs/intro">
+            문서 확인하기⏱️
           </Link>
         </div>
       </div>
