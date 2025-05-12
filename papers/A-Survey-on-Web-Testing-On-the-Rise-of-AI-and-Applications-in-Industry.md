@@ -14,7 +14,7 @@ tags: [Web-Testing, Graphic-User-Interface-Testing, Front-End, Survey, Search-Ba
 
      Iva Kertusha¹, Gebremariem Assres¹, Onur Duman², Andrea Arcuri¹
 
-    -   소속 (Affiliations): ¹Kristiania University College, Norway; ²Glasgow Caledonian University, Glasgow, UK
+-   소속 (Affiliations): ¹Kristiania University College, Norway; ²Glasgow Caledonian University, Glasgow, UK
 
 -   게재처 (Publication Venue): arXiv (cs.SE)
 
@@ -23,6 +23,8 @@ tags: [Web-Testing, Graphic-User-Interface-Testing, Front-End, Survey, Search-Ba
 -   arXiv ID: arXiv:2503.05378v1
 
 -   키워드 (Keywords): 웹 테스팅(web testing), GUI 테스팅(GUI testing), 프론트엔드(front-end), 설문 조사(survey), SBST(Search-Based Software Testing), AI(Artificial Intelligence), 퍼징(fuzzing)
+
+<!-- truncate -->
 
 ## 요약
 

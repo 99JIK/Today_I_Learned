@@ -14,8 +14,9 @@ tags: [Artificial-Intelligence, Artificial-Intelligence-Adoption, Collaboration,
 
      Ibrahim Youssef Alyoussef, Amr Mohammed Drwish, Fatimah Adel Albakheet, Rafdan Hassan Alhajhoj, Amal Ahmed Almousa
 
-    -   소속 (Affiliations): Education Technology, Faculty of Education, King Faisal University, Al-Ahsa 31982, Saudi Arabia
-    -   교신 저자 (Correspondence): Ibrahim Youssef Alyoussef (ialyoussef@kfu.edu.sa)
+-   소속 (Affiliations): Education Technology, Faculty of Education, King Faisal University, Al-Ahsa 31982, Saudi Arabia
+
+-   교신 저자 (Correspondence): Ibrahim Youssef Alyoussef (ialyoussef@kfu.edu.sa)
 
 -   학술지 (Journal): IEEE Access (게재 승인 상태, 정식 편집 전 저자 버전)
 
@@ -24,6 +25,8 @@ tags: [Artificial-Intelligence, Artificial-Intelligence-Adoption, Collaboration,
 -   DOI: 10.1109/ACCESS.2025.3567656 (게재 예정 DOI로 보임)
 
 -   키워드 (Index Terms): 인공지능(Artificial intelligence), AI 채택(AI adoption), 협업(Collaboration), 포용적 학습(Inclusive Learning), 고등 교육(Higher education), 기술 수용(Technology acceptance), 학생 인식(student perceptions)
+
+<!-- truncate -->
 
 ## 요약
 

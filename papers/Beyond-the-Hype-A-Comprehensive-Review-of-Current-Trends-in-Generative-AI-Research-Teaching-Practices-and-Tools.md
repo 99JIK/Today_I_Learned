@@ -14,7 +14,7 @@ tags: [Generative-AI, Large-Language-Models, Artificial-Intelligence, Pedagogica
 
      James Prather, Juho Leinonen, Natalie Kiesler, Jamie Gorson Benario, Sam Lau, Stephen MacNeil, Narges Norouzi, Simone Opel, Vee Pettit, Leo Porter, Brent N. Reeves, Jaromir Savelka, David H. Smith IV, Sven Strickroth, Daniel Zingaro (*공동 리더 표기 있음)
 
-    -   소속 (Affiliations): Abilene Christian University, Aalto University, Nuremberg Tech, Google, University of California San Diego, Temple University, University of California Berkeley, FernUniversität in Hagen, Virginia Tech, University of Illinois, LMU Munich, University of Toronto Mississauga 등 다수 대학 및 기업 연구자 포함.
+-   소속 (Affiliations): Abilene Christian University, Aalto University, Nuremberg Tech, Google, University of California San Diego, Temple University, University of California Berkeley, FernUniversität in Hagen, Virginia Tech, University of Illinois, LMU Munich, University of Toronto Mississauga 등 다수 대학 및 기업 연구자 포함.
 
 -   학회/발행처 (Conference/Publisher): 2024 Working Group Reports on Innovation and Technology in Computer Science Education (ITICSE-WGR 2024), ACM
 
@@ -29,6 +29,8 @@ tags: [Generative-AI, Large-Language-Models, Artificial-Intelligence, Pedagogica
 -   키워드 (Keywords): 생성형 AI(generative AI, GenAI), 거대 언어 모델(large language models), 인공지능(artificial intelligence), 교육학적 실제(pedagogical practices), 컴퓨팅 교육(teaching computing, computing education)
 
 -   CCS 개념 (CCS Concepts): 사회 및 전문 주제 → 컴퓨팅 교육; 컴퓨팅 방법론 → 인공지능
+
+<!-- truncate -->
 
 ## 요약
 

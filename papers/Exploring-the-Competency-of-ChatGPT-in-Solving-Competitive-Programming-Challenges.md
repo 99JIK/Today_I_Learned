@@ -29,6 +29,8 @@ tags: [ChatGPT, Problem-Solving, Competitive-Programming, Programming-Challenges
 
 -   키워드 (Keywords): ChatGPT, 문제 해결(Problem-solving), 경쟁적 프로그래밍(Competitive programming), 프로그래밍 챌린지(Programming challenges)
 
+<!-- truncate -->
+
 ## 요약
 
 ### 서론 (Introduction)
