@@ -2,7 +2,8 @@
 title: Exploring the Competency of ChatGPT in Solving Competitive Programming Challenges
 date: 2024-02-06
 description: 이 글은 홈페이지에 표시될 수 있는 간단한 설명입니다.
-tag: ChatGPT, Problem-solving, Competitive-Programming, Programming-challenges, LLM
+keywords: [ChatGPT, Problem Solving, Competitive Programming, Programming challenges, LLM]
+tags: [ChatGPT, Problem-Solving, Competitive-Programming, Programming-Challenges, LLM]
 ---
 
 # Exploring the Competency of ChatGPT in Solving Competitive Programming Challenges
@@ -51,7 +52,7 @@ ChatGPT가 Java 언어로 생성한 코드들은 LeetCode에 제출되어 정답
 
 ### 주요 결과 (Result Discussion)
 
--   **전반적 성능:** ChatGPT는 전체 300문제 중 **66.00%의 정답률(acceptance rate)**을 기록하여, 평균적인 인간 참가자의 정답률인 52.95%보다 높은 성과를 보였습니다.
+-   **전반적 성능:** ChatGPT는 전체 300문제 중 **66.00%의** **정답률(acceptance rate)**을 기록하여, 평균적인 인간 참가자의 정답률인 52.95%보다 높은 성과를 보였습니다.
 -   난이도별 성능:
     -   쉬움(Easy): ChatGPT 89.00% (인간 평균 62.72%)
     -   중간(Medium): ChatGPT 68.00% (인간 평균 54.04%)
