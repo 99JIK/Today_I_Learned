@@ -1,4 +1,4 @@
-# 이공계 Technical Writing 가이드
+# Technical Writing Guide
 
 책 [이공계 Technical Writing 가이드]를 읽고 정리한 문서이다.
 
@@ -138,8 +138,6 @@ Technical Writer들도 문장을 쓸 때 고민을 많이 하게 된다.
 기계를 이해시키기 위해서는 우선 단순하고 명확해야 한다.
 
 ### 글쓰기 분야의 VOC(Voice Of Customer)
-
-Share feedback on the editor
 
 Writing과 관련해서 고객은 주로 다음과 같은 항목에 불만을 토로한다.
 
