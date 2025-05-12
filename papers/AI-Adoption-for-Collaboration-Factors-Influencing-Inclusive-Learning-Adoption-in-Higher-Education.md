@@ -10,9 +10,7 @@ tags: [Artificial-Intelligence, Artificial-Intelligence-Adoption, Collaboration,
 
 ## 논문 정보
 
--   저자 (Authors):
-
-     Ibrahim Youssef Alyoussef, Amr Mohammed Drwish, Fatimah Adel Albakheet, Rafdan Hassan Alhajhoj, Amal Ahmed Almousa
+-   저자 (Authors): Ibrahim Youssef Alyoussef, Amr Mohammed Drwish, Fatimah Adel Albakheet, Rafdan Hassan Alhajhoj, Amal Ahmed Almousa
 
 -   소속 (Affiliations): Education Technology, Faculty of Education, King Faisal University, Al-Ahsa 31982, Saudi Arabia
 

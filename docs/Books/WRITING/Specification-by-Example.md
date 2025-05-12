@@ -1,5 +1,9 @@
 # Specification by Example
 
+책 [Specification by Exmaple(성공적인 프로젝트를 관통하는 핵심 실천법)]을 읽고 정리한 문서이다.
+
+![image-20250512151057028](./img/Specification-by-Example/image-20250512151057028.png)
+
 ## 핵심 이점
 
 ![file.excalidraw (4)](./img/Specification-by-Example/file.excalidraw(4).svg)

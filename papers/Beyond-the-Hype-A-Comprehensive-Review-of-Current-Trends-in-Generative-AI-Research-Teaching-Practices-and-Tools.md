@@ -10,9 +10,7 @@ tags: [Generative-AI, Large-Language-Models, Artificial-Intelligence, Pedagogica
 
 ## 논문 정보
 
--   저자 (Authors):
-
-     James Prather, Juho Leinonen, Natalie Kiesler, Jamie Gorson Benario, Sam Lau, Stephen MacNeil, Narges Norouzi, Simone Opel, Vee Pettit, Leo Porter, Brent N. Reeves, Jaromir Savelka, David H. Smith IV, Sven Strickroth, Daniel Zingaro (*공동 리더 표기 있음)
+-   저자 (Authors): James Prather, Juho Leinonen, Natalie Kiesler, Jamie Gorson Benario, Sam Lau, Stephen MacNeil, Narges Norouzi, Simone Opel, Vee Pettit, Leo Porter, Brent N. Reeves, Jaromir Savelka, David H. Smith IV, Sven Strickroth, Daniel Zingaro (*공동 리더 표기 있음)
 
 -   소속 (Affiliations): Abilene Christian University, Aalto University, Nuremberg Tech, Google, University of California San Diego, Temple University, University of California Berkeley, FernUniversität in Hagen, Virginia Tech, University of Illinois, LMU Munich, University of Toronto Mississauga 등 다수 대학 및 기업 연구자 포함.
 

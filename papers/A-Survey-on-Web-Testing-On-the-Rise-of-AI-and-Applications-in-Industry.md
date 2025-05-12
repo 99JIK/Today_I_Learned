@@ -10,9 +10,7 @@ tags: [Web-Testing, Graphic-User-Interface-Testing, Front-End, Survey, Search-Ba
 
 ## 논문 정보
 
--   저자 (Authors):
-
-     Iva Kertusha¹, Gebremariem Assres¹, Onur Duman², Andrea Arcuri¹
+-   저자 (Authors): Iva Kertusha¹, Gebremariem Assres¹, Onur Duman², Andrea Arcuri¹
 
 -   소속 (Affiliations): ¹Kristiania University College, Norway; ²Glasgow Caledonian University, Glasgow, UK
 
