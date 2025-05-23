@@ -11,7 +11,7 @@ tags: ["TRINITY", "MDTRIE", "Multi-attribute-Data-Store", "Compressed-Data", "Re
 - 학회 또는 저널명 (Conference or Journal Name): Nineteenth European Conference on Computer Systems (EuroSys '24) 
 - 제출일 또는 발행일 (Submission or Publication Date): 2024년 4월 22일-25일 
 - 키워드 (Keywords): TRINITY, MDTRIE, Multi-attribute data store, Compressed data, Real-time analytics, Space-filling curves, Morton code, Hierarchical indexing, Dynamic data structure 
-- DOI (Digital Object Identifier): <https://doi.org/10.1145/3627703.3650072> 
+- DOI (Digital Object Identifier): [https://doi.org/10.1145/3627703.3650072](https://doi.org/10.1145/3627703.3650072) 
 <!-- truncate -->
 
 ## 요약
@@ -43,7 +43,7 @@ MDTRIE의 최적화(압축 노드, 일반화된 모턴 인코딩, 엇갈린 모�
 다중 속성 범위 검색 및 효율적인 포인트 쿼리를 지원하는 동적, 간결, 자체 색인 다차원 데이터 구조인 MDTRIE의 설계.
 MDTRIE를 활용하여 대규모 다중 속성 데이터셋을 저장하고 쿼리하는 분산 데이터 저장소 TRINITY의 설계 및 구현.
 실제 워크로드에서 MDTRIE 및 TRINITY를 최신 데이터 구조 및 데이터 저장소와 비교 평가.
-TRINITY 코드는 <https://github.com/Trinity-data-store/Trinity> 에서 조회 및 사용 가능하다.
+TRINITY 코드는 [https://github.com/Trinity-data-store/Trinity](https://github.com/Trinity-data-store/Trinity) 에서 조회 및 사용 가능하다.
 기계 생성 데이터의 속성이 대부분 고정 너비를 가지므로, Morton 코드 기반 표현의 고정 비트 너비 제약은 대부분의 목표 애플리케이션에 허용된다.
 
 ### 요약
