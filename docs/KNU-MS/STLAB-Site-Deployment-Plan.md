@@ -213,3 +213,121 @@ jobs:
           TARGET: "/volume1/web/SITE" # NAS의 Web Station 문서 루트 경로
           # EXCLUDE: "/dist/, /node_modules/" # 필요시 제외할 Directory (SOURCE가 build/ 이므로 보통 불필요)
 ```
+
+### 실제 준비 Flow
+
+#### 1. `docusaurus.comfig.js`의 `url`, `basuUrl` 확인 및 수정
+
+-   NAS에서 사이트를 서비스할 최종 URL 경로에 맞게`url`, `baseUrl`을 설정한다.
+-   예시로 `https://stlab.knu.ac.kr` 로 서비스 할 경우, `url: 'https://stlab.knu.ac.kr'`, `baseUrl: '/'`로 설정한다.
+-   NAS의 Web Station에서 가상 호스트의 Root에 직접 연결하거나 기본 웹 공유 디렉터리`/web`의 Root에 배포한다면 `baseUrl: '/'`로 설정한다.
+
+#### 2. 빌드 테스트
+
+-   로컬에서 `npm run build` Command를 통해 build 폴더에 Static file들이 정상적으로 생성되는지 확인한다.
+
+#### 3. Synology NAS Web Station 설치 및 설정
+
+-   Package Center에서 Web Station을 설치한다.
+-   사이트 파일을 저장할 디렉터리를 기본 웹 공유 디렉터리 아래에 생성한다.
+
+#### 4. Synology NAS SSH 서비스 활성화
+
+-   DSM \> 제어판 \> 터미널 및 SNMP \> 터미널의 SSH 서비스 활성화를 체크한다.
+    -   보안을 위해 다른 Port Number를 사용하는 것을 권장한다.
+-   가능하다면 배포 전용 사용자를 생성하여 관리하는 것이 유용하다.
+    -   DSM \> 제어판 \> 사용자 및 그룹\(사용자\)의 생성을 선택하여 새 사용자를 생성한다.(예시: `github-deployer`)
+    -   생성한 사용자에게 사이트 파일을 저장할 디렉터리의 읽기/쓰기 권한을 부여한다.
+    -   생성한 사용자에게 SSH 서비스에 접근 권한을 허용한다.
+-   가상 호스트를 생성하여 특정 Domain을 사용하여 운영할 수 있도록 설정한다.
+    -   Web Station \> 가상 호스트 \> 생성의 이름 기반 또는 포트 기반 선택한다.
+        -   설정 시 이름 기반으로 선택하였다.
+        -   호스트 이름에는 사용할 도메인을 기입하였다.
+        -   포트는 사용할 포트를 기입하였다.
+        -   문서 루트는 웹 공유 디렉터리 아래에 생성한 사이트 파일을 저장한 디렉터리를 지정하였다.
+        -   HTTPS 설정은 가능하다면 모두 체크해주는 것이 좋다.
+        -   HTTP 백엔드 서버는 Nginx를 선택하였다.
+        -   PHP는 Static Site이므로 필요없다.
+
+#### 5. SSH Key 설정 및 Synology NAS에 Public Key 등록
+
+-   배포 사용자의 암호 대신 SSH Key를 사용하여 인증하여 관리하여 더 안전한 관리를 목적으로 한다.
+-   생성한 배포 사용자의 계정의 터미널에서 SSH Key Pair를 생성한다.
+    -   `ssh-keygen -t ed25519 -C "github_actions_stlab_deploy"`
+    -   생성한 Public Key의 내용을 Administrator로 로그인 하여 제어판 \> 터미널 및 SNMP \> SSH 서비스가 활성화 되어 있는지 확인한다.
+    -   authorized key를 생성한다.
+    -   현재 사용하는 NAS OS의 버전에 따라 사용자 계정의 SFTP, SSH를 수행하기 위한 권한이 다를 수 있으므로 이를 유의하여 계정을 설정한다.
+
+#### 6. Github Actions Workflow 생성 - Repository Secrets
+
+-   Github Repository Secrets를 이용하여 민감한 정보들을 관리한다.
+
+    -   해당 Github Repository \> Settings \> Secrets and Variables \> Actions \> New Repository Secret
+    -   아래 내용들을 Secret으로 관리할 예정이다.
+        -   `NAS_SSH_HOST`
+        -   `NAS_SSH_USER`
+        -   `NAS_SSH_KEY`
+        -   `NAS_DEPLOY_PATH`
+        -   `NAS_SSH_PORT`
+        -   이후 추가 시 기입
+
+-   rsync로 생기는 부하는 미미하여 고려하지 않아도 될 정도이다.
+
+    -   평균적인 나스 사용 상황
+
+        ![Before rsync](./img/STLAB-Site-Deployment-Plan/before_rsync.png)
+
+    -   rsync 전송 완료 이후 상황
+
+        ![After rsync](./img/STLAB-Site-Deployment-Plan/after_rsync.png)
+
+#### 7. Workflow YAML File 생성
+
+-   Repository의 `./.github/workflows/deploy-nas.yml`에 아래와 같이 작성할 예정이다.
+
+```yml
+name: Deploy STLAB Site to Synology NAS
+
+on:
+	push:
+		branches:
+			- main
+jobs:
+	build-and-deploy:
+		runs-on: ubuntu-latest
+		steps:
+			- name:	Checkout Repository
+			  uses:	actions/checkout@v4
+				  
+			- name:	Set up Node.js
+			  uses:	actions/setup-node@v4
+              with:
+                node-version:	'18'
+                cache:			'npm'
+					
+            - name:	Install Dependencies
+              run:	npm ci
+              #env:
+				  
+            - name: Deploy to NAS using rsync over SSH
+              uses: easingthemes/ssh-deploy@v5.0.0
+              with:
+                SSH_PRIVATE_KEY:	${{ secrets.NAS_SSH_KEY }}
+                ARGS:				"-rlvz --delete --cvs-exclude"
+                SOURCE:				"build/"
+                REMOTE_HOST: 		${{ secrets.NAS_SSH_HOST }}
+                REMOTE_USER: 		${{ secrets.NAS_SSH_USER }}
+                TARGET:				${{ secrets.NAS_SSH_PATH }}
+                REMOTE_PORT:		${{ secrets.NAS_SSH_PORT }} 
+```
+
+
+
+#### 8. 테스트 및 문제 해결
+
+-   위 설정한 내용들을 `main` Branch에 push 후 Github Actions Tab에서 Workflow 실행 과정을 모니터링 한다.
+-   오류 발생 시 Log를 확인하여 해결한다.
+-   배포가 성공할 경우 NAS Web Station에 설정한 URL로 접속하여 사이트가 정상적으로 보이는 지 확인한다.
+
+### 실제 발생 오류 및 해결상황
+
