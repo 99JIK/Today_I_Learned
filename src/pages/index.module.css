@@ -1,298 +1,251 @@
-/* src/css/custom.css */
-
-/**
- * Docusaurus 테마의 기본 CSS 변수를 여기서 덮어쓸 수 있습니다.
- * Infima의 모든 변수 목록은 다음에서 확인할 수 있습니다:
- * https://docusaurus.io/docs/styling/css-variables
- *
- * 전역 스타일도 이 파일에 직접 추가할 수 있습니다.
- */
-
-/* 라이트 모드와 다크 모드 모두에 적용되는 변수 */
-:root {
-  /**
-   * 기본 강조색(Primary Color)을 녹색 계열로 변경
-   * 예시 녹색: #4CAF50 (Material Design Green 500)
-   */
-  --ifm-color-primary: #4CAF50; /* 기본 강조색 (녹색) */
-  --ifm-color-primary-dark: #388E3C; /* 기본 강조색보다 약간 어두운 녹색 */
-  --ifm-color-primary-darker: #2E7D32; /* 기본 강조색보다 더 어두운 녹색 */
-  --ifm-color-primary-darkest: #1B5E20; /* 기본 강조색보다 가장 어두운 녹색 */
-  --ifm-color-primary-light: #81C784; /* 기본 강조색보다 약간 밝은 녹색 */
-  --ifm-color-primary-lighter: #A5D6A7; /* 기본 강조색보다 더 밝은 녹색 */
-  --ifm-color-primary-lightest: #C8E6C9; /* 기본 강조색보다 가장 밝은 녹색 */
-  
-  /* 기본 코드 블록 폰트 크기 (선택 사항) */
-  --ifm-code-font-size: 95%;
-  
-  /* 강조된 코드 라인 배경색 (선택 사항) */
-  --docusaurus-highlighted-code-line-bg: rgba(0, 0, 0, 0.1);
-
-  /* --- 기본 배경색 및 표면색 정의 (라이트 모드) --- */
-  --ifm-background-color: #ffffff; /* 라이트 모드 주 배경색 (흰색) */
-  --ifm-background-surface-color: #f8f9fa; /* 라이트 모드 표면 배경색 (매우 밝은 회색, LatestNewsSection 등에 사용됨) */
-
-  /* --- 히어로 섹션 관련 커스텀 변수 (선택 사항) --- */
-  --ifm-hero-background-color: #f4f7f9; /* 밝은 회색 히어로 배경 */
-  --ifm-hero-text-color: #2c3e50; /* 히어로 섹션 기본 텍스트 색상 */
-  --ifm-hero-title-color: var(--ifm-color-primary-darkest); /* 히어로 제목은 강조색의 가장 어두운 톤 */
-  --ifm-hero-subtitle-color: #525860; /* 히어로 부제목 색상 */
-
-  /* --- 기본 Docusaurus 폰트 fallback --- */
-  --ifm-font-family-fallback: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen,
-    Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
-  
-  /* 기본 폰트 설정 (커스텀 폰트를 사용하지 않으므로, Docusaurus 기본 또는 시스템 폰트 사용) */
-  --ifm-font-family-base: var(--ifm-font-family-fallback);
-  --ifm-font-family-heading: var(--ifm-font-family-fallback);
-
-  /* --- 푸터 관련 커스텀 변수 (개선된 스타일) --- */
-  --ifm-footer-background-color: #f8f9fa; /* 푸터 배경색 (매우 밝은 회색) */
-  --ifm-footer-link-color: var(--ifm-color-primary-dark); /* 푸터 링크 색상 (강조색의 어두운 톤) */
-  --ifm-footer-link-hover-color: var(--ifm-color-primary); /* 푸터 링크 호버 색상 (강조색 기본) */
-  --ifm-footer-title-color: var(--ifm-color-emphasis-700); /* 푸터 섹션 제목 색상 (약간 어두운 회색) */
-  --ifm-footer-text-color: var(--ifm-font-color-secondary); /* 푸터 기본 텍스트 색상 (저작권 등) */
+.homePageWrapper {
+  background-color: var(--ifm-background-surface-color);
+  padding: 2rem 0;
 }
 
-/* 다크 모드 전용 변수 */
-[data-theme='dark'] {
-  /**
-   * 다크 모드에서의 기본 강조색 (녹색 계열)
-   */
-  --ifm-color-primary: #66BB6A; /* 다크 모드에서는 약간 더 밝은 녹색 */
-  --ifm-color-primary-dark: #4CAF50; 
-  --ifm-color-primary-darker: #388E3C;
-  --ifm-color-primary-darkest: #2E7D32;
-  --ifm-color-primary-light: #81C784;
-  --ifm-color-primary-lighter: #A5D6A7;
-  --ifm-color-primary-lightest: #C8E6C9;
-
-  /* 다크 모드 강조된 코드 라인 배경색 (선택 사항) */
-  --docusaurus-highlighted-code-line-bg: rgba(0, 0, 0, 0.3);
-
-  /* --- 기본 배경색 및 표면색 정의 (다크 모드) --- */
-  --ifm-background-color: #121212; /* 다크 모드 주 배경색 (매우 어두운 회색) */
-  --ifm-background-surface-color: #1e2022; /* 다크 모드 표면 배경색 (LatestNewsSection 등에 사용됨) */
-
-  /* --- 다크 모드 히어로 섹션 관련 커스텀 변수 (선택 사항) --- */
-  --ifm-hero-background-color: #1e2022; /* 어두운 히어로 배경 (표면색과 동일하게 설정) */
-  --ifm-hero-text-color: #e0e6f0; /* 밝은 텍스트 */
-  --ifm-hero-title-color: var(--ifm-color-primary-light); /* 히어로 제목은 강조색의 밝은 톤 */
-  --ifm-hero-subtitle-color: #adb9c9; /* 밝은 회색 계열 부제목 */
-
-  /* --- 다크 모드 푸터 관련 커스텀 변수 (개선된 스타일) --- */
-  --ifm-footer-background-color: #18191a; /* 다크 모드 푸터 배경색 (Docusaurus 기본 카드 배경색과 유사) */
-  --ifm-footer-link-color: var(--ifm-color-primary-lighter); /* 다크 모드 푸터 링크 색상 (강조색의 더 밝은 톤) */
-  --ifm-footer-link-hover-color: var(--ifm-color-primary-lightest);
-  --ifm-footer-title-color: #dadde1; /* 푸터 제목 (흰색에 가까운 밝은 회색) */
-  --ifm-footer-text-color: #909d9d; /* 푸터 텍스트 (약간 흐린 회색) */
+.newspaperContainer {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 2rem 1.5rem;
+  background-color: var(--ifm-background-color);
+  box-shadow: 0 5px 25px rgba(0,0,0,0.07);
+  border-radius: 8px;
+  font-family: 'Noto Sans KR', sans-serif;
 }
 
-
-/* ---HomepageHeader--- */
-.heroBanner {
-  padding: 5rem 2rem; /* 상하 여백 충분히, 좌우 여백 */
+.newspaperHeader {
   text-align: center;
-  position: relative;
-  overflow: hidden;
-  background-color: var(--ifm-hero-background-color); /* 위에서 정의한 히어로 배경 변수 사용 */
-  color: var(--ifm-hero-text-color); /* 위에서 정의한 히어로 텍스트 변수 사용 */
-  border-bottom: 1px solid var(--ifm-hr-border-color, #e0e0e0);
-}
-
-/* Docusaurus 테마의 .hero--primary 기본 배경색을 사용하지 않도록 처리 */
-:global(.hero--primary) {
-  background: none !important;
-}
-
-/* 헤더의 제목 (siteConfig.title) */
-:global(.hero__title) {
-  font-size: 3.2rem; /* 제목 폰트 크기 */
-  font-weight: 700; 
-  margin-bottom: 1.2rem; /* 제목과 부제목 사이 간격 */
-  color: var(--ifm-hero-title-color); /* 위에서 정의한 히어로 제목 변수 사용 */
-  letter-spacing: -0.025em; /* 자간 미세 조정 */
-  line-height: 1.2;
-}
-
-/* 헤더의 부제목 (siteConfig.tagline) */
-:global(.hero__subtitle) {
-  font-size: 1.25rem; /* 부제목 폰트 크기 */
-  color: var(--ifm-hero-subtitle-color); /* 위에서 정의한 히어로 부제목 변수 사용 */
-  max-width: 700px; /* 부제목 최대 너비 */
-  margin-left: auto;
-  margin-right: auto;
-  margin-bottom: 2.2rem; /* 부제목과 버튼 사이 간격 */
-  line-height: 1.6;
-}
-
-/* 헤더의 버튼들을 감싸는 컨테이너 */
-.buttons {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 1rem; /* 버튼 사이 간격 */
-}
-
-/* 헤더의 기본 버튼 스타일 (:global을 사용하여 .button 클래스 타겟팅) */
-.buttons > :global(.button) {
-  background-color: var(--ifm-color-primary); /* 변경된 강조색 사용 */
-  color: white; /* 버튼 텍스트 색상 */
-  border: none;
-  border-radius: 8px; /* 모서리 둥글게 */
-  padding: 0.8rem 1.8rem; /* 버튼 내부 여백 */
-  font-size: 1rem; /* 버튼 폰트 크기 */
-  font-weight: 600; 
-  text-decoration: none;
-  transition: background-color 0.2s ease-out, transform 0.2s ease-out, box-shadow 0.2s ease-out;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08); /* 은은한 그림자 */
-}
-
-/* 헤더 버튼에 마우스 올렸을 때 효과 */
-.buttons > :global(.button:hover) {
-  background-color: var(--ifm-color-primary-dark); /* 변경된 강조색의 어두운 톤 사용 */
-  transform: translateY(-2px); /* 살짝 위로 이동 */
-  box-shadow: 0 4px 12px rgba(var(--ifm-color-primary-rgb), 0.3); /* 변경된 강조색 기반 그림자 */
-}
-
-/* ---공통 섹션 제목 스타일--- */
-.sectionTitle {
-  font-size: 2.2rem; /* 각 섹션의 제목 (H2) */
-  margin-bottom: 2.5rem; /* 섹션 제목과 내용 사이 간격 */
-  color: var(--ifm-color-emphasis-800); /* Docusaurus 강조 색상 변수 */
-  font-weight: 600;
-  text-align: center; /* 기본적으로 가운데 정렬 */
-}
-
-/* ---반응형 디자인 조정--- */
-@media screen and (max-width: 996px) { 
-  .heroBanner {
-    padding: 4rem 1rem;
-  }
-  :global(.hero__title) {
-    font-size: 2.6rem;
-  }
-  :global(.hero__subtitle) {
-    font-size: 1.15rem;
-    margin-bottom: 2rem;
-  }
-  .buttons { 
-    flex-direction: column; 
-  }
-  .buttons > :global(.button) {
-    width: 100%; 
-    max-width: 300px; 
-    margin-bottom: 0.8rem; 
-  }
-  .buttons > :global(.button:last-child) {
-    margin-bottom: 0;
-  }
-
-  .sectionTitle { 
-    font-size: 1.9rem;
-    margin-bottom: 2rem;
-  }
-}
-
-@media screen and (max-width: 768px) { 
-  :global(.hero__title) {
-    font-size: 2.2rem;
-  }
-  :global(.hero__subtitle) {
-    font-size: 1.05rem;
-  }
-  .sectionTitle {
-    font-size: 1.7rem;
-  }
-  .keyLinkTitle {
-    font-size: 1.2rem;
-  }
-  .keyLinkDescription {
-    font-size: 0.9rem;
-  }
-  .newsItemTitle {
-    font-size: 1.1rem;
-  }
-  .newsItemsContainer {
-    grid-template-columns: 1fr; 
-  }
-}
-
-/* --- 6. 푸터 (Footer) 스타일 (개선된 버전) --- */
-.footer {
-  background-color: var(--ifm-footer-background-color); /* 개선된 푸터 배경 변수 사용 */
-  padding: 3.5rem 1.5rem; /* 푸터 상하 여백 약간 늘림 */
-  color: var(--ifm-footer-text-color); /* 개선된 푸터 텍스트 변수 사용 */
-  border-top: 1px solid var(--ifm-hr-border-color); /* 상단에 얇은 구분선 추가 */
-}
-
-.footer__title { /* 푸터 섹션 제목 (예: "Links", "Community") */
-  color: var(--ifm-footer-title-color); /* 개선된 푸터 제목 변수 사용 */
-  font-size: 1.05rem; /* 약간 작게 조정 */
-  font-weight: 500; /* 약간 얇게 */
-  margin-bottom: 1.2rem; /* 제목과 링크 목록 사이 간격 늘림 */
-  text-transform: uppercase; /* 대문자로 변경 (선택 사항) */
-  letter-spacing: 0.05em; /* 자간 약간 넓힘 */
-}
-
-.footer__link-item { /* 푸터 각 링크 아이템 */
-  color: var(--ifm-footer-link-color); /* 개선된 푸터 링크 변수 사용 */
-  text-decoration: none;
-  transition: color 0.2s ease, opacity 0.2s ease;
-  display: inline-block; 
-  padding: 0.3rem 0; 
-  font-size: 0.95rem; /* 링크 폰트 크기 약간 조정 */
-  opacity: 0.85; /* 기본 링크 투명도 약간 적용 */
-}
-
-.footer__link-item:hover {
-  color: var(--ifm-footer-link-hover-color); /* 개선된 푸터 링크 호버 변수 사용 */
-  text-decoration: none; /* 밑줄 제거 또는 유지 */
-  opacity: 1; /* 호버 시 완전 불투명 */
-}
-
-.footer__copyright { /* 저작권 텍스트 */
-  text-align: center;
-  margin-top: 3.5rem; /* 푸터 링크들과 저작권 사이 간격 늘림 */
-  font-size: 0.85rem; /* 저작권 폰트 크기 약간 작게 */
-  opacity: 0.7; 
-}
-
-/* 푸터 로고가 있다면 스타일 조정 (선택 사항) */
-.footer__logo {
-  max-width: 140px; 
-  margin-bottom: 1.8rem; 
-  opacity: 0.8;
-}
-
-/* 푸터의 링크 목록 스타일 */
-.footer__links {
-  display: flex;
-  flex-wrap: wrap; 
-  justify-content: space-between; /* 링크 섹션들 사이 간격 조정 */
   margin-bottom: 2.5rem;
+  padding-bottom: 1.5rem;
+  border-bottom: 1px solid var(--ifm-hr-border-color);
 }
 
-.footer__col { /* 푸터의 각 컬럼 */
-  margin-bottom: 2rem; 
-  min-width: 180px; /* 각 컬럼 최소 너비 (레이아웃 안정성) */
+.newspaperTitle {
+  font-size: 2.8rem;
+  font-weight: 700;
+  margin-bottom: 0.3rem;
+  color: var(--ifm-heading-color);
+  letter-spacing: -0.025em;
 }
 
-/* 모바일에서 푸터 링크 컬럼 */
-@media screen and (max-width: 768px) {
-  .footer__links {
-    flex-direction: column;
-    align-items: flex-start; /* 모바일에서는 왼쪽 정렬 */
-    text-align: left;
+.newspaperDate {
+  font-size: 0.9rem;
+  color: var(--ifm-font-color-secondary);
+  font-weight: 400;
+}
+
+.newspaperGrid {
+  display: grid;
+  grid-template-columns: repeat(12, 1fr); /* 12단 그리드 */
+  grid-template-rows: repeat(2, auto); 
+  gap: 1.8rem;
+}
+
+.newspaperCard {
+  background-color: var(--ifm-card-background-color);
+  border-radius: var(--ifm-card-border-radius);
+  border: 1px solid var(--ifm-hover-overlay);
+  display: flex;
+  flex-direction: column;
+  transition: transform 0.25s ease-out, box-shadow 0.25s ease-out;
+  overflow: hidden; 
+}
+
+.newspaperCard:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 6px 12px rgba(0,0,0,0.08);
+}
+
+.articleLinkWrapper {
+  text-decoration: none;
+  color: inherit;
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+  height: 100%; 
+}
+.articleLinkWrapper:hover .articleTitle {
+  color: var(--ifm-color-primary-dark);
+}
+
+.articleContent { 
+  padding: 1.25rem;
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+.mainArticleImage {
+  width: 100%;
+  height: 200px; 
+  object-fit: cover;
+  display: block;
+}
+
+.articleTitle {
+  font-size: 1.3rem; 
+  font-weight: 700;
+  margin-top: 0;
+  margin-bottom: 0.5rem;
+  color: var(--ifm-heading-color);
+  line-height: 1.35;
+  transition: color 0.2s ease-in-out;
+}
+
+.gridMainArticle .articleTitle {
+  font-size: 1.6rem;
+}
+
+.articleSummary {
+  font-size: 0.9rem;
+  line-height: 1.6;
+  color: var(--ifm-font-color-secondary);
+  flex-grow: 1; 
+  margin-bottom: 1rem;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.gridMainArticle .articleSummary { -webkit-line-clamp: 5; }
+.gridGuide .articleSummary { -webkit-line-clamp: 4; }
+
+
+.readMoreButton {
+  align-self: flex-start;
+  margin: 0 1.25rem 1.25rem 1.25rem; 
+  font-size: 0.85rem !important;
+  padding: 0.4rem 0.9rem !important;
+}
+
+/* 사이드 광고 (키워드) */
+.sideAds { 
+  padding: 1.25rem;
+  text-align: center;
+  justify-content: center;
+}
+.sideAdTitle {
+  font-size: 1rem;
+  font-weight: 500;
+  margin-bottom: 0.5rem;
+  color: var(--ifm-font-color-secondary);
+}
+.sideAdText {
+  font-size: 0.85rem;
+  margin-bottom: 1rem;
+  color: var(--ifm-font-color-secondary);
+}
+.sideAdButton {
+  font-size: 0.85rem !important;
+  padding: 0.5rem 1rem !important;
+  width: auto;
+  display: inline-block;
+}
+
+/* 실제 광고 영역 */
+.realAdSpace { 
+  padding: 0; 
+  justify-content: center;
+  align-items: center;
+  background-color: var(--ifm-background-surface-color); 
+}
+/* .realAdSpace:hover 스타일 제거하여 .newspaperCard:hover 스타일 상속 */
+
+.adImage {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: contain; 
+  border-radius: var(--ifm-card-border-radius);
+}
+
+/* 최신 학습 & 소식 */
+.latestNewsSectionContainer { 
+  padding: 1.25rem;
+}
+.latestNewsSectionContainer .articleTitle {
+   margin-bottom: 1rem;
+   text-align: left;
+   border-bottom: none;
+   font-size: 1.4rem;
+}
+.latestNewsContent {
+  flex-grow: 1;
+  overflow-y: auto; 
+}
+.latestNewsSectionContainer :global(.newsItemsContainer) {
+  gap: 0.8rem;
+  margin-bottom: 0; 
+}
+.latestNewsSectionContainer :global(.newsItemCard) {
+  border: 1px solid var(--ifm-hover-overlay);
+  box-shadow: none;
+  min-height: auto; 
+  padding: 0.8rem;
+}
+.latestNewsSectionContainer :global(.newsItemTitle) {
+  font-size: 1rem;
+  -webkit-line-clamp: 2;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  margin-bottom: 0.25rem;
+}
+.latestNewsSectionContainer :global(.newsItemDate) {
+  font-size: 0.75rem;
+}
+.latestNewsSectionContainer :global(.seeMoreButtonContainer) {
+  margin-top: 1rem;
+  text-align: right;
+}
+.latestNewsSectionContainer :global(.seeMoreButton) {
+  font-size: 0.8rem !important;
+  padding: 0.3rem 0.8rem !important;
+}
+
+
+/* --- 그리드 아이템 배치 --- */
+/* 모바일 (기본값): 12컬럼 전체 사용, 순서대로 쌓임 */
+.gridMainArticle, .gridKeywordsAd, .gridAdPlaceholder, .gridLatestNews, .gridGuide {
+  grid-column: span 12;
+}
+/* 데스크탑 (1024px 이상) */
+@media screen and (min-width: 1024px) {
+  .gridMainArticle { 
+    grid-column: 1 / span 7; /* 7칸 */
+    grid-row: 1 / span 2;    /* 2개 행 높이 차지 (더 커짐) */
   }
-  .footer__col {
-    width: 100%;
-    margin-bottom: 2rem;
+  .gridKeywordsAd { 
+    grid-column: 8 / span 5; /* 5칸 */
+    grid-row: 1 / span 1;    /* 첫 번째 행, 첫 번째 아이템 */
+    align-self: flex-start; 
+    min-height: 150px; /* 높이 조정 */
+    max-height: 180px;
   }
-  .footer__title {
-    margin-bottom: 0.5rem;
+  .gridAdPlaceholder { 
+    grid-column: 8 / span 5; /* 5칸 */
+    grid-row: 2 / span 1;    /* 두 번째 행, 첫 번째 아이템 (키워드 광고 아래로 이동) */
+    align-self: flex-start;
+    min-height: 150px; /* 높이 조정 */
+    max-height: 180px;
   }
-  .footer__copyright {
-    margin-top: 2.5rem;
+  .gridLatestNews { 
+    grid-column: 6 / span 7; /* 7칸 */
+    grid-row: 3 / span 2;    /* 세 번째 행부터 2개 행 높이 차지 (더 커짐) */
   }
+  .gridGuide { 
+    grid-column: 1 / span 5; /* 5칸 */
+    grid-row: 3 / span 2;    /* 세 번째 행부터 2개 행 높이 차지 */
+  }
+}
+
+/* 태블릿 (768px ~ 1023px) */
+@media screen and (min-width: 768px) and (max-width: 1023px) {
+  .gridMainArticle { grid-column: span 12; grid-row: auto; }
+  .gridKeywordsAd { grid-column: span 6; grid-row: auto; margin-top: 0; min-height: auto; max-height: none; }
+  .gridAdPlaceholder { grid-column: span 6; grid-row: auto; margin-top: 0; min-height: auto; max-height: none; }
+  .gridLatestNews { grid-column: span 12; grid-row: auto; }
+  .gridGuide { grid-column: span 12; grid-row: auto; }
 }

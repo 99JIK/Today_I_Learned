@@ -1,62 +1,100 @@
-
-// CSS 모듈 가져오기
-import styles from './index.module.css';
-import type {ReactNode} from 'react';
+// src/pages/index.tsx
+import React from 'react';
 import clsx from 'clsx';
-import Link from '@docusaurus/Link';
+import useDocusaurusContext from '@docusaurus/useDocusaurusContext';
 import Layout from '@theme/Layout';
 import Heading from '@theme/Heading';
 
-import KeyLinksSection from '@site/src/components/KeyLinksSection';
-import LatestNewsSection from '@site/src/components/LatestNewsSection';
-import useDocusaurusContext from '@docusaurus/useDocusaurusContext';
+// 새로 만든 홈페이지 아이템 컴포넌트들
+import MainArticleItem from '@site/src/components/HomepageItems/MainArticleItem';
+import KeywordsAdItem from '@site/src/components/HomepageItems/KeywordsAdItem';
+import AdPlaceholderItem from '@site/src/components/HomepageItems/AdPlaceholderItem';
+import LatestNewsItem from '@site/src/components/HomepageItems/LatestNewsItem';
+import GuideItem from '@site/src/components/HomepageItems/GuideItem';
+
+import styles from './index.module.css';
+
+// 홈페이지 콘텐츠 데이터
+const homepageData = {
+  mainArticle: {
+    title: "Glad to Introduce Myself",
+    summary: "경북대학교 컴퓨터학부 석사 과정에 재학 중인 김정인입니다. 데이터베이스와 소프트웨어 테스팅 기법에 관심이 있으며 현재 KNU STLAB에 소속중입니다.",
+    link: "/Who-am-I",
+    image: "https://placehold.co/800x350/E9E9E9/B0B0B0?text=JIK%27s+Insight&font=notosanskr",
+  },
+  keywordsAd: {
+    title: "Paper I Read",
+    text: "제가 읽고 정리한 논문들을 키워드 별로 찾아보세요.",
+    link: "/papers/tags",
+    linkText: "키워드별 논문 보기",
+  },
+  guide: {
+    title: "Guide of JIK\'s TIL ",
+    summary: "본 TIL은 Docs에서는 주제별 학습 내용을, Papers에서는 논문 요약을 찾아볼 수 있습니다.",
+    link: "/How-to-Read",
+  },
+  // 광고 플레이스홀더 데이터 (필요시 추가)
+  adPlaceholder: {
+    imageUrl: "https://placehold.co/300x250/A9A9A9/FFFFFF?text=Your+Ad+Here&font=notosanskr",
+    altText: "광고 영역",
+    linkUrl: "#" // 실제 광고 링크
+  }
+};
+
+// 그리드 아이템 설정 (예: 12컬럼 기반)
+// [x, y, width, height] 또는 CSS grid-area 이름 사용 가능
+// 여기서는 grid-column과 grid-row를 CSS에서 직접 제어하는 방식을 사용합니다.
+// 대신 각 컴포넌트에 특정 클래스를 부여하여 CSS에서 제어합니다.
+const gridItemLayout = {
+  mainArticle: styles.gridMainArticle, // 예: grid-column: span 7; grid-row: span 2;
+  keywordsAd: styles.gridKeywordsAd,   // 예: grid-column: span 5; grid-row: span 1;
+  adPlaceholder: styles.gridAdPlaceholder, // 예: grid-column: span 5; grid-row: span 1; (키워드 광고 아래)
+  latestNews: styles.gridLatestNews,   // 예: grid-column: span 7; grid-row: span 2;
+  guide: styles.gridGuide,             // 예: grid-column: span 5; grid-row: span 2;
+};
 
 
-// --- 기존 HomepageHeader ---
-// 이 부분의 스타일은 docusaurus_modern_homepage_css_v1 아티팩트의 CSS를 따릅니다.
-function HomepageHeader() {
-  const {siteConfig} = useDocusaurusContext();
+function NewspaperHomepageLayout(): JSX.Element {
+  const { siteConfig } = useDocusaurusContext();
+  const today = new Date();
+  const formattedDate = `${today.getFullYear()}년 ${today.getMonth() + 1}월 ${today.getDate()}일`;
+
   return (
-    <header className={clsx('hero hero--primary', styles.heroBanner)}>
-      <div className="container">
-        <Heading as="h1" className="hero__title">
+    <div className={styles.newspaperContainer}>
+      <header className={styles.newspaperHeader}>
+        <Heading as="h1" className={styles.newspaperTitle}>
           {siteConfig.title}
         </Heading>
-        <p className="hero__subtitle">{siteConfig.tagline}</p>
-        <div className={styles.buttons}>
-          <Link
-            className="button button--secondary button--lg" // 이 버튼 스타일은 index.module.css에서 :global(.button)으로 제어됩니다.
-            to="/docs/intro">
-            문서 확인하기⏱️
-          </Link>
-        </div>
+        <p className={styles.newspaperDate}>{formattedDate} | 오늘의 배움을 기록합니다.</p>
+      </header>
+
+      <div className={styles.newspaperGrid}>
+        <MainArticleItem {...homepageData.mainArticle} gridClasses={gridItemLayout.mainArticle} />
+        <KeywordsAdItem {...homepageData.keywordsAd} gridClasses={gridItemLayout.keywordsAd} />
+        
+        {/* 새로운 광고 플레이스홀더 아이템 */}
+        <AdPlaceholderItem 
+          gridClasses={gridItemLayout.adPlaceholder}
+          imageUrl={homepageData.adPlaceholder?.imageUrl} // 필요시 데이터 객체에서 가져옴
+          linkUrl={homepageData.adPlaceholder?.linkUrl}
+        />
+
+        <LatestNewsItem gridClasses={gridItemLayout.latestNews} />
+        <GuideItem {...homepageData.guide} gridClasses={gridItemLayout.guide} />
       </div>
-    </header>
+    </div>
   );
 }
 
-
-// --- 기본 Home 컴포넌트 ---
-export default function Home(): ReactNode {
-  const {siteConfig} = useDocusaurusContext();
+export default function Home(): JSX.Element {
+  const { siteConfig } = useDocusaurusContext();
   return (
     <Layout
-      title={`${siteConfig.title}`} // 브라우저 탭에 표시될 제목
-      description={`${siteConfig.tagline}`}> {/* SEO를 위한 설명 */}
-      
-      {/* 1. 홈페이지 헤더 */}
-      <HomepageHeader />
-
-      <main>
-        {/* 3. 새로운 콘텐츠 섹션: 주요 바로가기 */}
-        <KeyLinksSection />
-
-        {/* 4. 새로운 콘텐츠 섹션: 최신 소식 / 블로그 안내 */}
-        <LatestNewsSection />
-
-        {/* 여기에 더 많은 섹션을 추가할 수 있습니다. */}
-        {/* 예: 프로젝트 쇼케이스, 기여 안내, 문의하기 등 */}
-      </main>
+      title={`새로운 소식 - ${siteConfig.title}`}
+      description={siteConfig.tagline}
+      wrapperClassName={styles.homePageWrapper}
+    >
+      <NewspaperHomepageLayout />
     </Layout>
   );
 }

@@ -1,300 +1,292 @@
 /* src/css/custom.css */
-@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100..900&display=swap');
-/* src/css/custom.css */
-/* src/css/custom.css */
-
-/**
- * Docusaurus 테마의 기본 CSS 변수를 여기서 덮어쓸 수 있습니다.
- * Infima의 모든 변수 목록은 다음에서 확인할 수 있습니다:
- * https://docusaurus.io/docs/styling/css-variables
- *
- * 전역 스타일도 이 파일에 직접 추가할 수 있습니다.
- */
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;500;700&display=swap');
 
 /* 라이트 모드와 다크 모드 모두에 적용되는 변수 */
 :root {
-  /**
-   * 기본 강조색(Primary Color)을 녹색 계열로 변경
-   * 예시 녹색: #4CAF50 (Material Design Green 500)
-   */
-  --ifm-color-primary: #4CAF50; /* 기본 강조색 (녹색) */
-  --ifm-color-primary-dark: #388E3C; /* 기본 강조색보다 약간 어두운 녹색 */
-  --ifm-color-primary-darker: #2E7D32; /* 기본 강조색보다 더 어두운 녹색 */
-  --ifm-color-primary-darkest: #1B5E20; /* 기본 강조색보다 가장 어두운 녹색 */
-  --ifm-color-primary-light: #81C784; /* 기본 강조색보다 약간 밝은 녹색 */
-  --ifm-color-primary-lighter: #A5D6A7; /* 기본 강조색보다 더 밝은 녹색 */
-  --ifm-color-primary-lightest: #C8E6C9; /* 기본 강조색보다 가장 밝은 녹색 */
+  /* --- 무채색 기반 기본 색상 --- */
+  --ifm-color-primary: #4a4a4a; /* 기본 강조색 (톤 다운된 회색) */
+  --ifm-color-primary-dark: #333333;
+  --ifm-color-primary-darker: #222222;
+  --ifm-color-primary-darkest: #111111;
+  --ifm-color-primary-light: #6f6f6f;
+  --ifm-color-primary-lighter: #959595;
+  --ifm-color-primary-lightest: #bdbdbd;
+
+  --ifm-background-color: #ffffff;
+  --ifm-background-surface-color: #f9f9f9; /* 배경 표면색 약간 더 밝게 */
   
-  /* 기본 코드 블록 폰트 크기 (선택 사항) */
-  --ifm-code-font-size: 95%;
+  --ifm-font-color-base: #2c3e50; /* 기본 텍스트 색상 (약간 푸른빛 도는 어두운 회색) */
+  --ifm-font-color-secondary: #5a6a7d; /* 보조 텍스트 색상 */
+  --ifm-heading-color: var(--ifm-font-color-base); /* 제목 색상 */
   
-  /* 강조된 코드 라인 배경색 (선택 사항) */
-  --docusaurus-highlighted-code-line-bg: rgba(0, 0, 0, 0.1);
+  --ifm-code-font-size: 90%;
+  --docusaurus-highlighted-code-line-bg: rgba(0, 0, 0, 0.04); /* 코드 하이라이트 더 연하게 */
 
-  /* 여기에 다른 전역 CSS 변수들을 추가하거나 수정할 수 있습니다. */
-  /* 예: --ifm-link-color: var(--ifm-color-primary-dark); */
+  --ifm-font-family-base: 'Noto Sans KR', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+  --ifm-font-family-heading: 'Noto Sans KR', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+  --ifm-heading-font-weight: 700; /* 제목 폰트 두께 기본 Bold */
+  --ifm-global-font-size: 16px; /* 기본 폰트 크기 */
+  --ifm-line-height-base: 1.65; /* 기본 줄 간격 */
 
-  /* --- 히어로 섹션 관련 커스텀 변수 (선택 사항) --- */
-  /* 이 변수들은 홈페이지 헤더 스타일(.heroBanner)에서 사용될 수 있습니다. */
-  --ifm-hero-background-color: #f4f7f9; /* 밝은 회색 히어로 배경 */
-  --ifm-hero-text-color: #2c3e50; /* 히어로 섹션 기본 텍스트 색상 */
-  --ifm-hero-title-color: var(--ifm-color-primary-darkest); /* 히어로 제목은 강조색의 가장 어두운 톤 */
-  --ifm-hero-subtitle-color: #525860; /* 히어로 부제목 색상 */
+  --ifm-navbar-background-color: var(--ifm-background-color);
+  --ifm-navbar-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.07); /* 그림자 조정 */
+  --ifm-navbar-padding-horizontal: 1.5rem;
+  --ifm-navbar-height: 4rem;
+  --ifm-navbar-link-color: var(--ifm-font-color-base);
+  --ifm-navbar-link-hover-color: var(--ifm-color-primary);
+  --ifm-navbar-link-active-color: var(--ifm-color-primary-dark);
+  --ifm-navbar-item-padding-horizontal: 1rem;
 
-  /* --- 기본 Docusaurus 폰트 fallback --- */
-  --ifm-font-family-fallback: 'Noto Sans KR';
-  
-  /* --- 다크 모드 히어로 섹션 관련 커스텀 변수 (선택 사항) --- */
-  --ifm-hero-background-color: #1e2022; /* 어두운 히어로 배경 (기존 #1c1e21 보다 살짝 밝게) */
-  --ifm-hero-text-color: #e0e6f0; /* 밝은 텍스트 */
-  --ifm-hero-title-color: var(--ifm-color-primary-light); /* 히어로 제목은 강조색의 밝은 톤 */
-  --ifm-hero-subtitle-color: #adb9c9; /* 밝은 회색 계열 부제목 */
+  --ifm-footer-background-color: var(--ifm-background-surface-color);
+  --ifm-footer-link-color: var(--ifm-font-color-secondary);
+  --ifm-footer-link-hover-color: var(--ifm-color-primary);
+  --ifm-footer-title-color: var(--ifm-font-color-base);
+  --ifm-footer-text-color: var(--ifm-font-color-secondary);
+  --ifm-footer-padding-vertical: 2.5rem;
 
-  /* --- 다크 모드 푸터 관련 커스텀 변수 (개선된 스타일) --- */
-  --ifm-footer-background-color: #18191a; /* 다크 모드 푸터 배경색 (Docusaurus 기본 카드 배경색과 유사) */
-  --ifm-footer-link-color: var(--ifm-color-primary-lighter); /* 다크 모드 푸터 링크 색상 (강조색의 더 밝은 톤) */
-  --ifm-footer-link-hover-color: var(--ifm-color-primary-lightest);
-  --ifm-footer-title-color: #dadde1; /* 푸터 제목 (흰색에 가까운 밝은 회색) */
-  --ifm-footer-text-color: #909d9d; /* 푸터 텍스트 (약간 흐린 회색) */
+  --ifm-card-background-color: var(--ifm-background-color);
+  --ifm-card-border-radius: 6px; /* 카드 모서리 약간 줄임 */
+  --ifm-card-shadow: 0 1px 3px rgba(0,0,0,0.06); /* 카드 그림자 연하게 */
+  --ifm-card-spacing-horizontal: 1.25rem;
+  --ifm-card-spacing-vertical: 1.25rem;
+  --ifm-hover-overlay: rgba(0,0,0,0.07); /* 호버 시 사용될 수 있는 오버레이 색상 (카드 테두리 등) */
+
+  --ifm-button-border-radius: 4px; /* 버튼 모서리 약간 줄임 */
+  --ifm-button-padding-horizontal: 1.2rem;
+  --ifm-button-padding-vertical: 0.5rem;
+  --ifm-button-font-weight: 500;
+  --ifm-button-transition: all 0.2s ease-in-out;
+  --ifm-button-background-color: var(--ifm-color-primary);
+  --ifm-button-border-color: var(--ifm-color-primary);
+  --ifm-button-color: #ffffff;
+
+  --ifm-hr-border-color: #e0e0e0; /* 구분선 색상 */
+
+  /* 테마 전환 효과를 위한 변수 */
+  --ifm-transition-fast: 150ms; /* 더 빠르게 */
+  --ifm-transition-medium: 250ms; /* 중간 속도 추가 */
+  --ifm-transition-slow: 350ms; /* 약간 빠르게 */
+  --ifm-transition-timing-default: ease-in-out;
 }
 
-
-/* 다크 모드 전용 변수 */
 [data-theme='dark'] {
-  /**
-   * 다크 모드에서의 기본 강조색 (녹색 계열)
-   * 라이트 모드와 동일한 강조색을 사용하거나, 다크 모드에 더 적합한 톤으로 조정할 수 있습니다.
-   */
-  --ifm-color-primary: #66BB6A; /* 다크 모드에서는 약간 더 밝은 녹색 (예: Material Green 400) */
-  --ifm-color-primary-dark: #4CAF50; 
-  --ifm-color-primary-darker: #388E3C;
-  --ifm-color-primary-darkest: #2E7D32;
-  --ifm-color-primary-light: #81C784;
-  --ifm-color-primary-lighter: #A5D6A7;
-  --ifm-color-primary-lightest: #C8E6C9;
+  --ifm-color-primary: #9e9e9e; /* 다크모드 기본 강조색 (밝은 회색) */
+  --ifm-color-primary-dark: #b3b3b3;
+  --ifm-color-primary-darker: #c8c8c8;
+  --ifm-color-primary-darkest: #dddddd;
+  --ifm-color-primary-light: #8a8a8a;
+  --ifm-color-primary-lighter: #757575;
+  --ifm-color-primary-lightest: #616161;
 
-  /* 다크 모드 강조된 코드 라인 배경색 (선택 사항) */
-  --docusaurus-highlighted-code-line-bg: rgba(0, 0, 0, 0.3);
+  --ifm-background-color: #212121; /* 다크 모드 주 배경색 */
+  --ifm-background-surface-color: #2c2c2c; /* 다크 모드 표면 배경색 */
 
-  /* --- 다크 모드 히어로 섹션 관련 커스텀 변수 (선택 사항) --- */
-  --ifm-hero-background-color: #1c1e21; /* 어두운 히어로 배경 */
-  --ifm-hero-text-color: #e0e6f0; /* 밝은 텍스트 */
-  --ifm-hero-title-color: var(--ifm-color-primary-light); /* 히어로 제목은 강조색의 밝은 톤 */
-  --ifm-hero-subtitle-color: #adb9c9; /* 밝은 회색 계열 부제목 */
+  --ifm-font-color-base: #e8e8e8;
+  --ifm-font-color-secondary: #b0b0b0;
+  --ifm-heading-color: var(--ifm-font-color-base);
+  
+  --docusaurus-highlighted-code-line-bg: rgba(255, 255, 255, 0.08);
 
-  /* --- 다크 모드 푸터 관련 커스텀 변수 (선택 사항) --- */
-  --ifm-footer-background-color: #121212; /* 다크 모드 푸터 배경색 (더 어둡게) */
-  --ifm-footer-link-color: #81c784; /* 다크 모드 푸터 링크 색상 (강조색의 중간 톤) */
-  --ifm-footer-link-hover-color: var(--ifm-color-primary-lighter);
-  --ifm-footer-title-color: #f5f5f5;
-  --ifm-footer-text-color: #a0aec0; 
+  --ifm-navbar-background-color: var(--ifm-background-color);
+  --ifm-navbar-shadow: 0 1px 3px 0 rgba(255, 255, 255, 0.05);
+  --ifm-navbar-link-color: var(--ifm-font-color-base);
+  --ifm-navbar-link-hover-color: var(--ifm-color-primary-dark);
+  --ifm-navbar-link-active-color: var(--ifm-color-primary-darker);
+
+  --ifm-footer-background-color: var(--ifm-background-surface-color);
+  --ifm-footer-link-color: var(--ifm-font-color-secondary);
+  --ifm-footer-link-hover-color: var(--ifm-color-primary-dark);
+  --ifm-footer-title-color: var(--ifm-font-color-base);
+
+  --ifm-card-background-color: var(--ifm-background-color);
+  --ifm-card-shadow: 0 1px 3px rgba(255,255,255,0.06);
+  --ifm-hover-overlay: rgba(255,255,255,0.07);
+
+  --ifm-button-background-color: var(--ifm-color-primary);
+  --ifm-button-border-color: var(--ifm-color-primary);
+  --ifm-button-color: #1e1e1e;
+
+  --ifm-hr-border-color: #424242;
+}
+
+/* --- 테마 전환 효과 --- */
+html, body {
+  transition: background-color var(--ifm-transition-medium) var(--ifm-transition-timing-default), /* body 전환은 중간 속도 */
+              color var(--ifm-transition-medium) var(--ifm-transition-timing-default);
+}
+
+/* 대부분의 컴포넌트는 빠른 전환 속도 사용 */
+.navbar, .footer, .menu, .card, .heroBanner,
+article, aside, section,
+div[class*="sidebar"], div[class*="tocCollapsible_"],
+div[class*="codeBlockContainer_"], blockquote, table,
+.main-wrapper, .container, .menu__link, .theme-doc-sidebar-menu,
+/* 홈페이지 신문 레이아웃 카드 */
+div[class*="index_module_newspaperCard"] { 
+  transition: background-color var(--ifm-transition-fast) var(--ifm-transition-timing-default),
+              border-color var(--ifm-transition-fast) var(--ifm-transition-timing-default),
+              box-shadow var(--ifm-transition-fast) var(--ifm-transition-timing-default);
+}
+
+/* 텍스트 색상 전환 */
+h1, h2, h3, h4, h5, h6, p, li, span, strong, em,
+.navbar__title, .navbar__link, .footer__link-item, .menu__link,
+.button, .tabs__item, .pagination-nav__label,
+[class*="heading"], [class*="title"], [class*="subtitle"],
+div[class*="index_module_articleTitle"], /* 홈페이지 카드 제목 */
+div[class*="index_module_articleSummary"], /* 홈페이지 카드 요약 */
+div[class*="index_module_sideAdTitle"],
+div[class*="index_module_sideAdText"] {
+  transition: color var(--ifm-transition-fast) var(--ifm-transition-timing-default);
+}
+
+/* SVG 아이콘 색상 전환 (fill 또는 stroke) */
+svg {
+  transition: fill var(--ifm-transition-fast) var(--ifm-transition-timing-default),
+              stroke var(--ifm-transition-fast) var(--ifm-transition-timing-default);
 }
 
 
-/* --- 1. 홈페이지 헤더 (HomepageHeader) 스타일 --- */
-.heroBanner {
-  padding: 5rem 2rem; /* 상하 여백 충분히, 좌우 여백 */
-  text-align: center;
-  position: relative;
-  overflow: hidden;
-  background-color: var(--ifm-hero-background-color); /* 위에서 정의한 히어로 배경 변수 사용 */
-  color: var(--ifm-hero-text-color); /* 위에서 정의한 히어로 텍스트 변수 사용 */
-  border-bottom: 1px solid var(--ifm-hr-border-color, #e0e0e0);
+/* --- 나머지 기존 스타일 유지 --- */
+.navbar__brand .navbar__title {
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: var(--ifm-navbar-link-color);
+  margin-left: 0;
 }
 
-/* Docusaurus 테마의 .hero--primary 기본 배경색을 사용하지 않도록 처리 */
-:global(.hero--primary) {
-  background: none !important;
+a, .tabs__item {
+  transition: color 0.2s ease-in-out, border-color 0.2s ease-in-out, background-color 0.2s ease-in-out, opacity 0.2s ease-in-out;
 }
-
-/* 헤더의 제목 (siteConfig.title) */
-:global(.hero__title) {
-  font-size: 3.2rem; /* 제목 폰트 크기 */
-  font-weight: 700; 
-  margin-bottom: 1.2rem; /* 제목과 부제목 사이 간격 */
-  color: var(--ifm-hero-title-color); /* 위에서 정의한 히어로 제목 변수 사용 */
-  letter-spacing: -0.025em; /* 자간 미세 조정 */
-  line-height: 1.2;
-}
-
-/* 헤더의 부제목 (siteConfig.tagline) */
-:global(.hero__subtitle) {
-  font-size: 1.25rem; /* 부제목 폰트 크기 */
-  color: var(--ifm-hero-subtitle-color); /* 위에서 정의한 히어로 부제목 변수 사용 */
-  max-width: 700px; /* 부제목 최대 너비 */
-  margin-left: auto;
-  margin-right: auto;
-  margin-bottom: 2.2rem; /* 부제목과 버튼 사이 간격 */
-  line-height: 1.6;
-}
-
-/* 헤더의 버튼들을 감싸는 컨테이너 */
-.buttons {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 1rem; /* 버튼 사이 간격 */
-}
-
-/* 헤더의 기본 버튼 스타일 (:global을 사용하여 .button 클래스 타겟팅) */
-.buttons > :global(.button) {
-  background-color: var(--ifm-color-primary); /* 변경된 강조색 사용 */
-  color: white; /* 버튼 텍스트 색상 */
-  border: none;
-  border-radius: 8px; /* 모서리 둥글게 */
-  padding: 0.8rem 1.8rem; /* 버튼 내부 여백 */
-  font-size: 1rem; /* 버튼 폰트 크기 */
-  font-weight: 600; 
+a:hover {
   text-decoration: none;
-  transition: background-color 0.2s ease-out, transform 0.2s ease-out, box-shadow 0.2s ease-out;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08); /* 은은한 그림자 */
 }
 
-/* 헤더 버튼에 마우스 올렸을 때 효과 */
-.buttons > :global(.button:hover) {
-  background-color: var(--ifm-color-primary-dark); /* 변경된 강조색의 어두운 톤 사용 */
-  transform: translateY(-2px); /* 살짝 위로 이동 */
-  box-shadow: 0 4px 12px rgba(var(--ifm-color-primary-rgb), 0.3); /* 변경된 강조색 기반 그림자 */
+.main-wrapper .container {
+  padding-top: 1.5rem;
+  padding-bottom: 2.5rem;
 }
 
-/* ---공통 섹션 제목 스타일--- */
-.sectionTitle {
-  font-size: 2.2rem; /* 각 섹션의 제목 (H2) */
-  margin-bottom: 2.5rem; /* 섹션 제목과 내용 사이 간격 */
-  color: var(--ifm-color-emphasis-800); /* Docusaurus 강조 색상 변수 */
-  font-weight: 600;
-  text-align: center; /* 기본적으로 가운데 정렬 */
+h1, .markdown h1 {
+  font-size: 2rem;
+  margin-bottom: 1.25rem;
 }
 
-/* ---반응형 디자인 조정--- */
-@media screen and (max-width: 996px) { 
-  .heroBanner {
-    padding: 4rem 1rem;
-  }
-  :global(.hero__title) {
-    font-size: 2.6rem;
-  }
-  :global(.hero__subtitle) {
-    font-size: 1.15rem;
-    margin-bottom: 2rem;
-  }
-  .buttons { 
-    flex-direction: column; 
-  }
-  .buttons > :global(.button) {
-    width: 100%; 
-    max-width: 300px; 
-    margin-bottom: 0.8rem; 
-  }
-  .buttons > :global(.button:last-child) {
-    margin-bottom: 0;
-  }
-
-  .sectionTitle { 
-    font-size: 1.9rem;
-    margin-bottom: 2rem;
-  }
+h2, .markdown h2 {
+  font-size: 1.65rem;
+  margin-top: 2.25rem;
+  margin-bottom: 1rem;
+  padding-bottom: 0.25rem;
+  border-bottom: 1px solid var(--ifm-hr-border-color);
 }
 
-@media screen and (max-width: 768px) { 
-  :global(.hero__title) {
-    font-size: 2.2rem;
-  }
-  :global(.hero__subtitle) {
-    font-size: 1.05rem;
-  }
-  .sectionTitle {
-    font-size: 1.7rem;
-  }
-  .keyLinkTitle {
-    font-size: 1.2rem;
-  }
-  .keyLinkDescription {
-    font-size: 0.9rem;
-  }
-  .newsItemTitle {
-    font-size: 1.1rem;
-  }
-  .newsItemsContainer {
-    grid-template-columns: 1fr; 
-  }
+h3, .markdown h3 {
+  font-size: 1.35rem;
+  margin-top: 1.8rem;
+  margin-bottom: 0.8rem;
 }
 
-/* ---Footer--- */
+div[class*="codeBlockContainer_"] {
+  border-radius: var(--ifm-card-border-radius);
+  box-shadow: var(--ifm-card-shadow);
+  margin-bottom: var(--ifm-leading);
+}
+
+blockquote {
+  background-color: var(--ifm-background-surface-color);
+  border-left: 4px solid var(--ifm-color-primary-lightest);
+  padding: 1rem 1.25rem;
+  border-radius: 0 var(--ifm-card-border-radius) var(--ifm-card-border-radius) 0;
+  margin-left: 0;
+  margin-right: 0;
+}
+
+table {
+  display: block;
+  overflow-x: auto;
+  margin-bottom: var(--ifm-leading);
+  border-collapse: separate;
+  border-spacing: 0;
+  border: 1px solid var(--ifm-hr-border-color);
+  border-radius: var(--ifm-card-border-radius);
+  width: 100%;
+}
+
+table th,
+table td {
+  padding: 0.6rem 0.8rem;
+  border-bottom: 1px solid var(--ifm-hr-border-color);
+  border-right: 1px solid var(--ifm-hr-border-color);
+}
+table th:last-child,
+table td:last-child {
+  border-right: none;
+}
+table tr:last-child td {
+  border-bottom: none;
+}
+
+table th {
+  background-color: var(--ifm-background-surface-color);
+  font-weight: var(--ifm-font-weight-bold);
+  text-align: left;
+}
+
 .footer {
-  background-color: var(--ifm-footer-background-color); /* 개선된 푸터 배경 변수 사용 */
-  padding: 3.5rem 1.5rem; /* 푸터 상하 여백 약간 늘림 */
-  color: var(--ifm-footer-text-color); /* 개선된 푸터 텍스트 변수 사용 */
-  border-top: 1px solid var(--ifm-hr-border-color); /* 상단에 얇은 구분선 추가 */
+  border-top: 1px solid var(--ifm-hr-border-color);
+  font-size: 0.875rem;
 }
 
-.footer__title { /* 푸터 섹션 제목 (예: "Links", "Community") */
-  color: var(--ifm-footer-title-color); /* 개선된 푸터 제목 변수 사용 */
-  font-size: 1.05rem; /* 약간 작게 조정 */
-  font-weight: 500; /* 약간 얇게 */
-  margin-bottom: 1.2rem; /* 제목과 링크 목록 사이 간격 늘림 */
-  text-transform: uppercase; /* 대문자로 변경 (선택 사항) */
-  letter-spacing: 0.05em; /* 자간 약간 넓힘 */
+.footer__title {
+  font-size: 0.95rem;
+  font-weight: 500;
+  margin-bottom: 0.8rem;
 }
 
-.footer__link-item { /* 푸터 각 링크 아이템 */
-  color: var(--ifm-footer-link-color); /* 개선된 푸터 링크 변수 사용 */
-  text-decoration: none;
-  transition: color 0.2s ease, opacity 0.2s ease;
-  display: inline-block; 
-  padding: 0.3rem 0; 
-  font-size: 0.95rem; /* 링크 폰트 크기 약간 조정 */
-  opacity: 0.85; /* 기본 링크 투명도 약간 적용 */
+.footer__link-item {
+  font-size: 0.875rem;
+  padding: 0.15rem 0;
+  opacity: 0.75;
 }
-
 .footer__link-item:hover {
-  color: var(--ifm-footer-link-hover-color); /* 개선된 푸터 링크 호버 변수 사용 */
-  text-decoration: none; /* 밑줄 제거 또는 유지 */
-  opacity: 1; /* 호버 시 완전 불투명 */
+  opacity: 1;
+  color: var(--ifm-footer-link-hover-color);
 }
 
-.footer__copyright { /* 저작권 텍스트 */
-  text-align: center;
-  margin-top: 3.5rem; /* 푸터 링크들과 저작권 사이 간격 늘림 */
-  font-size: 0.85rem; /* 저작권 폰트 크기 약간 작게 */
-  opacity: 0.7; 
+.footer__copyright {
+  margin-top: 2rem;
+  opacity: 0.65;
 }
 
-/* 푸터 로고가 있다면 스타일 조정 (선택 사항) */
-.footer__logo {
-  max-width: 140px; 
-  margin-bottom: 1.8rem; 
-  opacity: 0.8;
+.announcementBar_node_modules-\@docusaurus-theme-classic-lib-theme-AnnouncementBar-styles-module {
+  font-weight: 500;
+  background-color: var(--ifm-color-primary-lightest) !important;
+  color: var(--ifm-color-primary-darkest) !important;
+  transition: background-color var(--ifm-transition-fast) var(--ifm-transition-timing-default), 
+              color var(--ifm-transition-fast) var(--ifm-transition-timing-default);
+}
+[data-theme='dark'] .announcementBar_node_modules-\@docusaurus-theme-classic-lib-theme-AnnouncementBar-styles-module {
+  background-color: var(--ifm-color-primary-lightest) !important;
+  color: var(--ifm-color-primary-darkest) !important;
+}
+.announcementBar_node_modules-\@docusaurus-theme-classic-lib-theme-AnnouncementBar-styles-module a {
+  color: var(--ifm-color-primary-dark) !important;
+  text-decoration: underline;
+  transition: color var(--ifm-transition-fast) var(--ifm-transition-timing-default);
+}
+[data-theme='dark'] .announcementBar_node_modules-\@docusaurus-theme-classic-lib-theme-AnnouncementBar-styles-module a {
+  color: var(--ifm-color-primary-darkest) !important;
 }
 
-/* 푸터의 링크 목록 스타일 */
-.footer__links {
-  display: flex;
-  flex-wrap: wrap; 
-  justify-content: space-between; /* 링크 섹션들 사이 간격 조정 */
-  margin-bottom: 2.5rem;
-}
 
-.footer__col { /* 푸터의 각 컬럼 */
-  margin-bottom: 2rem; 
-  min-width: 180px; /* 각 컬럼 최소 너비 (레이아웃 안정성) */
+h2[class*="title_f1Hy"], /* title_f1Hy를 포함하는 모든 h2 */
+.blogPostTitle_node_modules-\@docusaurus-theme-classic-lib-theme-BlogPostItem-Header-Title-styles-module a, /* 기본 테마의 블로그 아이템 제목 링크 */
+article header h2, /* 일반적인 블로그 아이템 헤더의 h2 */
+.markdown h1 /* 블로그 게시물 상세 페이지의 메인 제목 */ {
+  font-size: 1.8rem !important; /* 원하는 크기로 조정 (예: 1.8rem) */
+  margin-bottom: 0.75rem !important; /* 아래 여백 조정 */
 }
-
-/* 모바일에서 푸터 링크 컬럼 */
-@media screen and (max-width: 768px) {
-  .footer__links {
-    flex-direction: column;
-    align-items: flex-start; /* 모바일에서는 왼쪽 정렬 */
-    text-align: left;
-  }
-  .footer__col {
-    width: 100%;
-    margin-bottom: 2rem;
-  }
-  .footer__title {
-    margin-bottom: 0.5rem;
-  }
-  .footer__copyright {
-    margin-top: 2.5rem;
-  }
+h1[class*="title_f1Hy"]{
+  font-size: 2.2rem !important; /* 원하는 크기로 조정 (예: 1.8rem) */
+  margin-bottom: 0.75rem !important; /* 아래 여백 조정 */
 }
