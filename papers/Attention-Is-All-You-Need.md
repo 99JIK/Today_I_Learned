@@ -22,17 +22,23 @@ tags: ["Transformer", "Attention Mechanism", "Self-Attention", "Multi-Head Atten
     -   Illia Polosukhin (+; Work performed while at Google Research)
 -   **학회 또는 저널명 (Conference or Journal Name):** 31st Conference on Neural Information Processing Systems (NIPS 2017), Long Beach, CA, USA
 -   **제출일 또는 발행일 (Submission or Publication Date):** 2017년 12월 (NIPS 2017 학회 발표). 이 문서는 2023년 8월 2일자 arXiv:1706.03762v7 버전. 최초 arXiv 제출은 2017년 6월 12일.
+-   **키워드 (Keywords):** Transformer, Attention Mechanism, Self-Attention, Multi-Head Attention, Sequence Transduction, Machine Translation, Natural Language Processing, Encoder-Decoder, Parallelization, Positional Encoding
+
+<!-- truncate -->
+
 -   **초록 (Abstract):**
     지배적인 시퀀스 변환 모델은 인코더와 디코더를 포함하는 복잡한 순환 신경망(RNN) 또는 컨볼루션 신경망(CNN)에 기반한다. 최고 성능 모델들은 인코더와 디코더를 어텐션 메커니즘으로 연결한다. 본 논문은 순환과 컨볼루션을 완전히 배제하고 오직 어텐션 메커니즘에만 기반한 새로운 단순한 네트워크 아키텍처인 'Transformer(Transformer)'를 제안한다. 두 가지 기계 번역 작업에 대한 실험 결과, 이 모델들은 품질 면에서 우수하며 병렬화 가능성이 더 높고 훈련 시간이 훨씬 적게 소요됨을 보여준다. WMT 2014 영어-독일어 번역 작업에서 28.4 BLEU를 달성하여 기존 최고 결과(앙상블 포함)를 2 BLEU 이상 개선했다. WMT 2014 영어-프랑스어 번역 작업에서는 8개 GPU에서 3.5일 훈련 후 41.8 BLEU라는 새로운 단일 모델 최고 기록을 세웠으며, 이는 기존 최고 모델들의 훈련 비용의 극히 일부에 해당한다. Transformer는 대규모 및 제한된 훈련 데이터 모두에서 영어 구문 분석 작업에 성공적으로 적용되어 다른 작업에도 잘 일반화됨을 보여준다.
--   **키워드 (Keywords):** Transformer, Attention Mechanism, Self-Attention, Multi-Head Attention, Sequence Transduction, Machine Translation, Natural Language Processing, Encoder-Decoder, Parallelization, Positional Encoding
 -   **주요 연구 내용 (Main Research Content/Methodology):**
+
     -   순환 신경망(RNN)과 컨볼루션 신경망(CNN)을 사용하지 않고, 전적으로 어텐션 메커니즘에 기반한 'Transformer(Transformer)'라는 새로운 시퀀스 변환 모델 아키텍처를 제안
+
     -   인코더-디코더 구조를 가지며, 각 인코더와 디코더는 여러 개의 동일한 레이어를 쌓아 구성
     -   각 레이어는 '멀티헤드 셀프 어텐션(Multi-Head Self-Attention)' 메커니즘과 '위치별 피드포워드 네트워크(Position-wise Feed-Forward Network)'라는 두 개의 주요 하위 레이어로 구성
     -   '스케일드 닷 프로덕트 어텐션(Scaled Dot-Product Attention)'을 기본 어텐션 함수로 사용
     -   여러 어텐션 헤드를 병렬로 사용하여 서로 다른 표현 부분 공간(representation subspaces)에서 정보를 동시에 처리하는 '멀티헤드 어텐션(Multi-Head Attention)' 개념을 도입
     -   입력 시퀀스의 토큰 순서 정보를 모델에 제공하기 위해 사인(sine)과 코사인(cosine) 함수를 사용한 '위치 인코딩(Positional Encoding)'을 입력 임베딩에 추가
     -   레이어 정규화(Layer Normalization)와 잔차 연결(Residual Connections)을 각 하위 레이어에 적용
+
 -   **주요 결과 및 결론 (Key Findings and Conclusion):**
     -   Transformer 모델은 WMT 2014 영어-독일어 번역 작업에서 28.4 BLEU 점수를 획득하여 기존 최고 성능 모델들을 능가
     -   WMT 2014 영어-프랑스어 번역 작업에서 단일 모델로 41.8 BLEU 점수를 기록하며 새로운 최고 수준(state-of-the-art)을 달성 
@@ -90,15 +96,15 @@ Transformer는 이러한 전체적인 아키텍처를 따르며, 인코더와 �
 
 -   **스케일드 닷 프로덕트 어텐션 (Scaled Dot-Product Attention):**
     본 논문에서는 이를 "스케일드 닷 프로덕트 어텐션"이라고 부른다(Figure 2 참고). 입력은 $d_k$ 차원의 쿼리와 키, 그리고 $d_v$ 차원의 값으로 구성된다. 쿼리와 모든 키의 닷 프로덕트를 계산하고, 각각을 $\sqrt{d_k}$로 나눈 다음, 소프트맥스(softmax) 함수를 적용하여 값에 대한 가중치를 얻는다. 실제로는 쿼리 집합을 행렬 $Q$로 묶어 동시에 어텐션 함수를 계산한다. 키와 값도 행렬 $K$와 $V$로 묶는다. 출력 행렬은 다음과 같이 계산된다:
-    $$Attention(Q, K, V) = softmax(\frac{QK^T}{\sqrt{d_k}})V$$ 
-    가장 일반적으로 사용되는 두 가지 어텐션 함수는 덧셈적 어텐션(additive attention)과 닷 프로덕트(곱셈적) 어텐션이다. 닷 프로덕트 어텐션은 스케일링 인자 $\frac{1}{\sqrt{d_k}}$를 제외하면 본 논문의 알고리즘과 동일하다. 덧셈적 어텐션은 단일 은닉 계층을 가진 피드포워드 네트워크를 사용하여 호환성 함수를 계산한다. 이론적 복잡도는 비슷하지만, 고도로 최적화된 행렬 곱셈 코드를 사용하여 구현할 수 있으므로 닷 프로덕트 어텐션이 실제로는 훨씬 빠르고 공간 효율적이다. $d_k$ 값이 작을 때는 두 메커니즘이 유사하게 수행되지만, $d_k$가 클 경우 스케일링 없는 닷 프로덕트 어텐션보다 덧셈적 어텐션이 더 나은 성능을 보인다. 이는 큰 $d_k$ 값에 대해 닷 프로덕트 값이 너무 커져 소프트맥스 함수가 기울기가 매우 작은 영역으로 밀려나기 때문이라고 추측되며, 이를 완화하기 위해 닷 프로덕트를 $\frac{1}{\sqrt{d_k}}$로 스케일링한다. 
+    $$Attention(Q, K, V) = softmax( \frac{QK^T}{ \sqrt {d_k } } ) V $$ 
+    가장 일반적으로 사용되는 두 가지 어텐션 함수는 덧셈적 어텐션(additive attention)과 닷 프로덕트(곱셈적) 어텐션이다. 닷 프로덕트 어텐션은 스케일링 인자 $ \frac {1} { \sqrt{d_k} }$를 제외하면 본 논문의 알고리즘과 동일하다. 덧셈적 어텐션은 단일 은닉 계층을 가진 피드포워드 네트워크를 사용하여 호환성 함수를 계산한다. 이론적 복잡도는 비슷하지만, 고도로 최적화된 행렬 곱셈 코드를 사용하여 구현할 수 있으므로 닷 프로덕트 어텐션이 실제로는 훨씬 빠르고 공간 효율적이다. $d_k$ 값이 작을 때는 두 메커니즘이 유사하게 수행되지만, $d_k$가 클 경우 스케일링 없는 닷 프로덕트 어텐션보다 덧셈적 어텐션이 더 나은 성능을 보인다. 이는 큰 $d_k$ 값에 대해 닷 프로덕트 값이 너무 커져 소프트맥스 함수가 기울기가 매우 작은 영역으로 밀려나기 때문이라고 추측되며, 이를 완화하기 위해 닷 프로덕트를 $\frac{1}{\sqrt{d_k} }$로 스케일링한다. 
 
 -   **멀티헤드 어텐션 (Multi-Head Attention):**
     $d_{model}$ 차원의 키, 값, 쿼리로 단일 어텐션 함수를 수행하는 대신, 쿼리, 키, 값을 서로 다른 학습된 선형 투영(linear projection)을 통해 $h$번 각각 $d_k, d_k, d_v$ 차원으로 투영하는 것이 유익하다는 것을 발견했다. 이 투영된 버전의 쿼리, 키, 값 각각에 대해 병렬로 어텐션 함수를 수행하여 $d_v$ 차원의 출력 값을 얻는다. 이들은 연결(concatenate)된 후 다시 한 번 투영되어 최종 값을 생성한다(Figure 2 참고).
     멀티헤드 어텐션은 모델이 서로 다른 위치에서 서로 다른 표현 하위 공간(representation subspaces)의 정보에 공동으로 주의를 기울일 수 있도록 한다(이를 쉽게 비유하기 위해 복잡한 사건을 여러명의 탐정이 수사하는 상황으로 대치해보면 각 탐정_attention head_은 자기 전문 분야_representation subspaces_를 활용하여 단서를 분석하여 모든 탐정의 분석 결과를 종합해 사건 전모를 파악하는 것이라고 생각하면 쉽다.). 단일 어텐션 헤드에서는 평균화가 이를 저해한다.
     $$MultiHead(Q, K, V) = Concat(head_1, ..., head_h)W^O$$
     $$where \quad head_i = Attention(QW_i^Q, KW_i^K, VW_i^V)$$
-    여기서 투영은 파라미터 행렬 $W_i^Q \in \mathbb{R}^{d_{model} \times d_k}$, $W_i^K \in \mathbb{R}^{d_{model} \times d_k}$, $W_i^V \in \mathbb{R}^{d_{model} \times d_v}$ 및 $W^O \in \mathbb{R}^{hd_v \times d_{model}}$이다.
+    여기서 투영은 파라미터 행렬 $W_i^Q \in \mathbb{R}^{d_{model} \times d_k}$, $W_i^K \in \mathbb{R}^{d_{model} \times d_k}$, $W_i^V \in \mathbb{R}^{d_{model} \times d_v}$ 및 $W^O \in \mathbb{R}^{hd_v \times d_{model} }$이다.
     본 연구에서는 $h=8$개의 병렬 어텐션 레이어, 즉 헤드를 사용한다. 각 헤드에 대해 $d_k = d_v = d_{model}/h = 64$를 사용한다. 각 헤드의 차원이 줄어들기 때문에 총 계산 비용은 전체 차원의 단일 헤드 어텐션과 유사하다.
 
 -   **모델에서의 어텐션 적용 (Applications of Attention in our Model):**
@@ -113,15 +119,15 @@ $$FFN(x) = max(0, xW_1 + b_1)W_2 + b_2$$
 선형 변환은 서로 다른 위치에서 동일하지만 레이어마다 다른 파라미터를 사용한다. 다른 방식으로 설명하면 커널 크기가 1인 두 개의 컨볼루션과 같다. 입력 및 출력 차원은 $d_{model}=512$이고, 내부 레이어의 차원은 $d_{ff}=2048$이다.
 
 **임베딩과 소프트맥스 (Embeddings and Softmax):**
-다른 시퀀스 변환 모델과 유사하게, 학습된 임베딩을 사용하여 입력 토큰과 출력 토큰을 $d_{model}$ 차원의 벡터로 변환한다. 또한 일반적인 학습된 선형 변환과 소프트맥스 함수를 사용하여 디코더 출력을 예측된 다음 토큰 확률로 변환한다. 본 모델에서는 두 임베딩 레이어와 사전 소프트맥스(pre-softmax) 선형 변환 간에 동일한 가중치 행렬을 공유하며, 임베딩 레이어에서는 이러한 가중치에 $\sqrt{d_{model}}$을 곱한다.
+다른 시퀀스 변환 모델과 유사하게, 학습된 임베딩을 사용하여 입력 토큰과 출력 토큰을 $d_{model}$ 차원의 벡터로 변환한다. 또한 일반적인 학습된 선형 변환과 소프트맥스 함수를 사용하여 디코더 출력을 예측된 다음 토큰 확률로 변환한다. 본 모델에서는 두 임베딩 레이어와 사전 소프트맥스(pre-softmax) 선형 변환 간에 동일한 가중치 행렬을 공유하며, 임베딩 레이어에서는 이러한 가중치에 $\sqrt{d_{model} }$을 곱한다.
 
 ![Table 3: Variations on the Transformer architecture.](./img/Attention-Is-All-You-Need/image-20250604080159318.png)
 
 **위치 인코딩 (Positional Encoding):**
 모델에 순환이나 컨볼루션이 없기 때문에 시퀀스의 순서를 활용하려면 토큰의 상대적 또는 절대적 위치에 대한 정보를 주입해야 한다. 이를 위해 인코더 및 디코더 스택의 맨 아래 입력 임베딩에 "위치 인코딩(positional encodings)"을 추가한다. 위치 인코딩은 임베딩과 동일한 차원 $d_{model}$을 가지므로 두 가지를 합산할 수 있다. 학습된 위치 인코딩과 고정된 위치 인코딩 등 다양한 선택지가 있다.
 본 연구에서는 서로 다른 주파수의 사인 및 코사인 함수를 사용한다:
-$$PE_{(pos, 2i)} = sin(pos/10000^{2i/d_{model}})$$
-$$PE_{(pos, 2i+1)} = cos(pos/10000^{2i/d_{model}})$$
+$$PE_{(pos, 2i)} = sin(pos/10000^{2i/d_{model} })$$
+$$PE_{(pos, 2i+1)} = cos(pos/10000^{2i/d_{model} })$$
 여기서 $pos$는 위치이고 $i$는 차원이다. 즉, 위치 인코딩의 각 차원은 사인파에 해당된다. 파장은 $2\pi$에서 $10000 \cdot 2\pi$까지 기하급수적으로 형성된다. 이 함수를 선택한 이유는 고정된 오프셋 $k$에 대해 $PE_{pos+k}$가 $PE_{pos}$의 선형 함수로 표현될 수 있어 모델이 상대적 위치에 의해 쉽게 어텐션을 학습할 수 있을 것이라고 가정했기 때문이다. 학습된 위치 임베딩을 사용하는 실험도 진행했으며, 두 버전이 거의 동일한 결과를 산출함을 발견했다(Table 3, 행 (E) 참조). 사인파 버전을 선택한 이유는 훈련 중에 접한 것보다 긴 시퀀스 길이에 모델이 일반화될 수 있기 때문이다.
 
 ### 왜 셀프 어텐션인가? (Why Self-Attention?)

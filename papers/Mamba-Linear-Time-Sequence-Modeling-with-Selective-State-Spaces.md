@@ -16,9 +16,12 @@ tags: [State Space Models, Sequence Modeling, Transformer Alternatives, Linear-T
     -   Tri Dao (Department of Computer Science, Princeton University)
 -   **학회 또는 저널명 (Conference or Journal Name)**: arXiv preprint (arXiv:2312.00752v2 \[cs.LG\]) 
 -   **제출일 또는 발행일 (Submission or Publication Date)**: 2024년 5월 31일 (v2)
+-   **키워드 (Keywords)**: State Space Models, Sequence Modeling, Transformer Alternatives, Linear-Time Complexity, Selective State Spaces, Deep Learning, Foundation Models 
+
+<!-- truncate -->
+
 -   **초록 (Abstract)**:
     기반 모델은 현재 딥 러닝의 흥미로운 응용 프로그램 대부분을 구동하며, 거의 보편적으로 트랜스포머 아키텍처와 핵심 어텐션 모듈을 기반으로 한다. 선형 어텐션, 게이트 컨볼루션 및 순환 모델, 구조화된 상태 공간 모델(SSM)과 같은 많은 준이차 시간 아키텍처가 긴 시퀀스에 대한 트랜스포머의 계산 비효율성을 해결하기 위해 개발되었지만, 언어와 같은 중요한 양식에서는 어텐션만큼 좋은 성능을 보이지 못했다. 본 연구에서는 이러한 모델의 주요 약점이 내용 기반 추론을 수행할 수 없다는 점을 확인하고 몇 가지 개선 사항을 제시한다. 첫째, SSM 매개변수를 입력의 함수로 만들어 이산적인 양식에서의 약점을 해결하고, 모델이 현재 토큰에 따라 시퀀스 길이 차원을 따라 정보를 선택적으로 전파하거나 잊도록 허용한다. 둘째, 이러한 변경으로 인해 효율적인 컨볼루션을 사용할 수 없게 되지만, 순환 모드에서 하드웨어 인식 병렬 알고리즘을 설계한다. 이러한 선택적 SSM을 어텐션이나 MLP 블록조차 없는 단순화된 엔드투엔드 신경망 아키텍처(Mamba)에 통합한다. Mamba는 빠른 추론(트랜스포머보다 5배 높은 처리량)과 시퀀스 길이에 대한 선형 확장을 즐기며, 실제 데이터에서 최대 백만 길이 시퀀스까지 성능이 향상된다. 일반적인 시퀀스 모델 백본으로서 Mamba는 언어, 오디오, 유전체학과 같은 여러 양식에서 최첨단 성능을 달성한다. 언어 모델링에서 Mamba-3B 모델은 동일한 크기의 트랜스포머를 능가하고 사전 훈련 및 다운스트림 평가 모두에서 두 배 크기의 트랜스포머와 일치한다.
--   **키워드 (Keywords)**: State Space Models, Sequence Modeling, Transformer Alternatives, Linear-Time Complexity, Selective State Spaces, Deep Learning, Foundation Models 
 -   **주요 연구 내용 (Main Research Content/Methodology)**:
     -   기존 상태 공간 모델(SSM)의 한계점인 내용 기반 선택 능력 부재를 해결하기 위해 **선택적 SSM (Selective SSMs)**을 제안. 이는 SSM의 파라미터($\Delta, B, C$)를 입력에 따라 동적으로 변화시켜, 관련 정보는 선택적으로 전파하고 불필요한 정보는 필터링하도록 설계.
     -   선택 메커니즘으로 인해 기존의 효율적인 컨볼루션 연산 사용이 불가해진 문제를 해결하기 위해, GPU 메모리 계층 구조(SRAM, HBM)를 고려한 **하드웨어 인식 병렬 알고리즘**을 개발. 이는 순환 모드(scan)로 계산되지만, 확장된 상태를 GPU의 효율적인 메모리(SRAM)에서만 구체화하고 재계산(recomputation) 기법을 활용하여 메모리 IO를 최적화.
@@ -26,7 +29,7 @@ tags: [State Space Models, Sequence Modeling, Transformer Alternatives, Linear-T
 -   **주요 결과 및 결론 (Key Findings and Conclusion)**:
     -   Mamba는 시퀀스 길이에 대해 **선형적으로 확장**되며, 트랜스포머 대비 **5배 빠른 추론 속도**를 달성.
     -   언어, 오디오, 유전체학 등 다양한 시퀀스 데이터에서 **최첨단(SOTA) 성능**을 보임. 특히 최대 백만 길이의 시퀀스에서도 성능 향상을 확인.
-    -   언어 모델링에서 Mamba-3B는 동일 크기의 트랜스포머보다 우수하며, 두 배 큰 트랜스포머와 동등한 성능을 보임.
+    -   언어 모델링에서 Mamba-3B는 동일 크기의 트랜스포머보다 우수하며Wz, 두 배 큰 트랜스포머와 동등한 성능을 보임.
     -   합성 데이터(Selective Copying, Induction Heads)에서 우수한 성능 및 일반화 능력을 입증하여 선택 메커니즘의 효과를 확인함.
     -   선택적 SSM은 기존 LTI SSM의 단점을 극복하고, 내용 기반 추론을 가능하게 하여 다양한 데이터 유형, 특히 텍스트나 DNA와 같은 이산적 데이터에서 효과적임.
 -   **기여점 (Contributions)**:
