@@ -3,7 +3,7 @@ title: "TRINITY: A Fast Compressed Multi-attribute Data Store"
 date: 2024-04-22 
 description: "TRINITY: 빠른 압축 다중 속성 데이터 저장소" 
 keywords: ["TRINITY", "MDTRIE", "Multi-attribute Data Store", "Compressed Data", "Real-time Analytics", "Space-filling Curves", "Morton Code", "Hierarchical Indexing", "Dynamic Data Structure" ] 
-tags: ["TRINITY", "MDTRIE", "Multi-attribute-Data-Store", "Compressed-Data", "Real-time-Analytics", "Space-filling Curves", "Morton-Code", "Hierarchical-Indexing", "Dynamic-Data-Structure"]
+tags: ["TRINITY", "MDTRIE", "Multi-attribute Data Store", "Compressed Data", "Real-time Analytics", "Space-filling Curves", "Morton Code", "Hierarchical Indexing", "Dynamic Data Structure"]
 ---
 # TRINITY: A Fast Compressed Multi-attribute Data Store
 ## 논문 정보

@@ -3,7 +3,7 @@ title: "A Survey on Web Testing: On the Rise of AI and Applications in Industry"
 date: 2025-03-07
 description: "웹 테스팅에 관한 설문 조사: AI의 부상과 산업 응용"
 keywords: [Web Testing, Graphic User Interface Testing, Front-End, Survey, Search-Based Software Testing, Software Testing, Artificial Intelligence, Fuzzing]
-tags: [Web-Testing, Graphic-User-Interface-Testing, Front-End, Survey, Search-Based-Software-Testing, Software-Testing, Artificial-Intelligence, Fuzzing]
+tags: [Web Testing, Graphic User Interface Testing, Front-End, Survey, Search-Based Software Testing, Software Testing, Artificial Intelligence, Fuzzing]
 ---
 
 # A Survey on Web Testing: On the Rise of AI and Applications in Industry

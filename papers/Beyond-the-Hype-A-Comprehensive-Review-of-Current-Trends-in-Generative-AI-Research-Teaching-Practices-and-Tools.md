@@ -3,7 +3,7 @@ title: "Beyond the Hype: A Comprehensive Review of Current Trends in Generative 
 date: 2024.07.10
 description: "과대광고를 넘어: 생성형 AI 연구, 교육 실제 및 도구의 현재 동향에 대한 포괄적 검토"
 keywords: [Generative AI, Large Language Models, Artificial Intelligence, Pedagogical Practices, Teaching Computing, Computing Education]
-tags: [Generative-AI, Large-Language-Models, Artificial-Intelligence, Pedagogical-Practices, Teaching-Computing, Computing-Education]
+tags: [Generative AI, Large Language Models, Artificial Intelligence, Pedagogical Practices, Teaching Computing, Computing Education]
 ---
 
 # Beyond the Hype: A Comprehensive Review of Current Trends in Generative AI Research, Teaching Practices, and Tools

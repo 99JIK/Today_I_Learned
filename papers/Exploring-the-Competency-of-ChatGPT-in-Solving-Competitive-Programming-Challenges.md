@@ -3,7 +3,7 @@ title: Exploring the Competency of ChatGPT in Solving Competitive Programming Ch
 date: 2024-02-06
 description: ChatGPT의 경쟁 프로그래밍 문제 해결 능력 탐구
 keywords: [ChatGPT, Problem Solving, Competitive Programming, Programming challenges, Large Language Models]
-tags: [ChatGPT, Problem-Solving, Competitive-Programming, Programming-Challenges, Large-Language-Models]
+tags: [ChatGPT, Problem Solving, Competitive Programming, Programming challenges, Large Language Models]
 ---
 
 # Exploring the Competency of ChatGPT in Solving Competitive Programming Challenges
