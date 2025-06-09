@@ -43,7 +43,6 @@ const config: Config = {
           editUrl: 'https://github.com/99jik/Today-I-Learned/blog/',
           path: './blog',
           routeBasePath: 'how-can-you-find?/blog',
-          // 블로그 사이드바 관련 설정 (선택 사항)
           blogSidebarTitle: 'All posts',
           blogSidebarCount: 'ALL',
           postsPerPage: 10, feedOptions: { type: 'all', copyright: `Copyright © ${new Date().getFullYear()} JIK\'s TIL` },
@@ -54,7 +53,6 @@ const config: Config = {
           sidebarPath: './sidebars.ts',
           routeBasePath: 'docs',
           showLastUpdateTime: true,
-          // docs 플러그인 옵션에 remarkMath 추가
           remarkPlugins: [remarkMath],
           rehypePlugins: [rehypeKatex],
         },
@@ -140,9 +138,9 @@ const config: Config = {
       isCloseable: true,
     },
     // algolia: { // Algolia DocSearch 사용 시 (신청 및 설정 필요)
-    //   appId: 'YOUR_APP_ID',
-    //   apiKey: 'YOUR_SEARCH_API_KEY',
-    //   indexName: 'YOUR_INDEX_NAME',
+    //   appId: '',
+    //   apiKey: '',
+    //   indexName: '',
     //   // optional:
     //   contextualSearch: true,
     // },

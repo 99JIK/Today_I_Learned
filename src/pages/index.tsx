@@ -20,7 +20,7 @@ const homepageData = {
     title: "Glad to Introduce Myself",
     summary: "경북대학교 컴퓨터학부 석사 과정에 재학 중인 김정인입니다. 데이터베이스와 소프트웨어 테스팅 기법에 관심이 있으며 현재 KNU STLAB에 소속중입니다.",
     link: "/Who-am-I",
-    image: "https://placehold.co/800x350/E9E9E9/B0B0B0?text=JIK%27s+Insight&font=notosanskr",
+    image: '/img/background.jpg',
   },
   keywordsAd: {
     title: "Paper I Read",
@@ -35,7 +35,7 @@ const homepageData = {
   },
   // 광고 플레이스홀더 데이터 (필요시 추가)
   adPlaceholder: {
-    imageUrl: "https://placehold.co/300x250/A9A9A9/FFFFFF?text=Your+Ad+Here&font=notosanskr",
+    imageUrl: "/img/ad.gif",
     altText: "광고 영역",
     linkUrl: "#" // 실제 광고 링크
   }
@@ -71,11 +71,9 @@ function NewspaperHomepageLayout(): JSX.Element {
       <div className={styles.newspaperGrid}>
         <MainArticleItem {...homepageData.mainArticle} gridClasses={gridItemLayout.mainArticle} />
         <KeywordsAdItem {...homepageData.keywordsAd} gridClasses={gridItemLayout.keywordsAd} />
-        
-        {/* 새로운 광고 플레이스홀더 아이템 */}
         <AdPlaceholderItem 
           gridClasses={gridItemLayout.adPlaceholder}
-          imageUrl={homepageData.adPlaceholder?.imageUrl} // 필요시 데이터 객체에서 가져옴
+          imageUrl={homepageData.adPlaceholder?.imageUrl}
           linkUrl={homepageData.adPlaceholder?.linkUrl}
         />
 
