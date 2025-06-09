@@ -62,7 +62,7 @@ const config: Config = {
           customCss: './src/css/custom.css',
         },
         gtag: { 
-          trackingID: 'G-14RM4LH9N5',
+          trackingID: 'G-6JH6PDMX1L',
           anonymizeIP: true,
         },
         sitemap: {
