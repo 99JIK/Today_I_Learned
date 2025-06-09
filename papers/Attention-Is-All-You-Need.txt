@@ -53,7 +53,7 @@ tags: ["Transformer", "Attention Mechanism", "Self-Attention", "Multi-Head Atten
 -   **DOI (Digital Object Identifier):** [https://doi.org/10.48550/arXiv.1706.03762](https://doi.org/10.48550/arXiv.1706.03762) (arXiv preprint)
 -   **기타 식별 가능한 정보 (예: 연구 분야, 인용 정보 간략 언급 등):**
     -   연구 분야: 자연어 처리 (Natural Language Processing, NLP), 기계 번역 (Machine Translation, MT), 딥러닝 (Deep Learning)
-    -   인용 정보: 본 논문은 2017년 NIPS 학회에 발표되었으며, 제시된 Transformer 모델은 이후 자연어 처리 분야 연구에 지대한 영향을 미쳐 광범위하게 인용되고 발전되었음. 제공된 PDF는 2023년 8월 2일자 arXiv 버전 7임.
+    -   인용 정보: 본 논문은 2017년 NIPS 학회에 발표되었으며, 제시된 Transformer 모델은 이후 자연어 처리 분야 연구에 지대한 영향을 미쳐 광범위하게 인용되고 발전되었다.
 
 ## 요약
 
