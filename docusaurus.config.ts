@@ -61,11 +61,10 @@ const config: Config = {
         theme: {
           customCss: './src/css/custom.css',
         },
-        // --- 기타 플러그인 설정 (예: Google Analytics, Sitemap 등) ---
-        // gtag: { // Google Analytics (GA4) 사용 시
-        //   trackingID: 'G-XXXXXXXXXX',
-        //   anonymizeIP: true,
-        // },
+        gtag: { 
+          trackingID: 'G-14RM4LH9N5',
+          anonymizeIP: true,
+        },
         // sitemap: { // 사이트맵 생성 시
         //   changefreq: 'weekly',
         //   priority: 0.5,
@@ -134,7 +133,7 @@ const config: Config = {
     prism: { theme: prismThemes.github, darkTheme: prismThemes.dracula },
     colorMode: { respectPrefersColorScheme: true},
     announcementBar: {
-      id: 'announcementBar-2', // 고유 ID (다시 보지 않기 기능에 사용)
+      id: 'announcementBar-2',
       content: '⭐️ 저의 학습 기록에 <b>별표</b>를 눌러주세요! <a target="_blank" rel="noopener noreferrer" href="https://github.com/99jik/Today-I-Learned">JIK\'s TIL</a> ⭐️',
       backgroundColor: '#fafbfc',
       textColor: '#091E42',
