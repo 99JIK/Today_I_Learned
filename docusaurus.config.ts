@@ -38,13 +38,13 @@ const config: Config = {
       /** @type {import('@docusaurus/preset-classic').Options} */
       ({
         blog: {
-          showLastUpdateTime: true,
-          showLastUpdateAuthor: true,
-          editUrl: 'https://github.com/99jik/Today-I-Learned/blog/',
           path: './blog',
           routeBasePath: 'how-can-you-find?/blog',
           blogSidebarTitle: 'All posts',
           blogSidebarCount: 'ALL',
+          showLastUpdateTime: true,
+          showLastUpdateAuthor: true,
+          editUrl: 'https://github.com/99jik/Today_I_Learned/tree/main/',
           postsPerPage: 10, feedOptions: { type: 'all', copyright: `Copyright © ${new Date().getFullYear()} JIK\'s TIL` },
           remarkPlugins: [remarkMath],
           rehypePlugins: [rehypeKatex],
@@ -53,6 +53,8 @@ const config: Config = {
           sidebarPath: './sidebars.ts',
           routeBasePath: 'docs',
           showLastUpdateTime: true,
+          showLastUpdateAuthor: true,
+          editUrl: 'https://github.com/99jik/Today_I_Learned/tree/main/',
           remarkPlugins: [remarkMath],
           rehypePlugins: [rehypeKatex],
         },
@@ -74,9 +76,10 @@ const config: Config = {
   ],
   plugins: [[
     '@docusaurus/plugin-content-blog',{
-          showReadingTime: true,
+          showLastUpdateTime: true,
+          showLastUpdateAuthor: true,
+          editUrl: 'https://github.com/99jik/Today_I_Learned/tree/main/',
           id: 'Paper',
-          editUrl: 'https://github.com/99jik/Today-I-Learned/papers/',
           path: './papers',
           routeBasePath: 'papers',
           blogSidebarTitle: 'Paper I Read',

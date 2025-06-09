@@ -1,18 +1,13 @@
 // src/hooks/useRecentlyUpdatedDocs.ts
-import { useAllPluginInstancesData } from '@docusaurus/useGlobalData';
+import { usePluginData } from '@docusaurus/useGlobalData';
+import type { DocMetadata as GlobalDocMetadata } from '@docusaurus/plugin-content-docs';
 
-// 문서 메타데이터 타입
-export interface DocMetadata {
-  id: string;
-  title: string;
-  permalink: string;
-  lastUpdatedAt?: number; // Unix timestamp (seconds)
+export interface DocMetadata extends GlobalDocMetadata {
   frontMatter: {
     description?: string;
   };
 }
 
-// plugin-content-docs 데이터 타입의 일부
 interface DocsPluginData {
   path: string;
   versions: Array<{
@@ -21,7 +16,7 @@ interface DocsPluginData {
     isLast: boolean;
     path: string;
     mainDocId: string;
-    docs: DocMetadata[] | Record<string, DocMetadata>;
+    docs: Record<string, DocMetadata>;
     sidebars?: Record<string, unknown>;
   }>;
 }
@@ -31,41 +26,47 @@ interface UseRecentlyUpdatedDocsReturn {
   totalDocsCount: number;
 }
 
-const MAX_DOCS_TO_SHOW_FROM_HOOK = 5; // 표시할 최대 문서 수
+const MAX_DOCS_TO_SHOW_FROM_HOOK = 5;
 
 export function useRecentlyUpdatedDocs(): UseRecentlyUpdatedDocsReturn {
-  const allPluginData = useAllPluginInstancesData();
-  const docsPluginData = allPluginData?.['docusaurus-plugin-content-docs']?.default as DocsPluginData | undefined;
-
-  let allDocs: DocMetadata[] = [];
+  const docsPluginData = usePluginData('docusaurus-plugin-content-docs') as DocsPluginData | undefined;
+  
+  let allItems: DocMetadata[] = [];
 
   if (docsPluginData && docsPluginData.versions) {
     docsPluginData.versions.forEach(version => {
-      const versionDocsArray = Array.isArray(version.docs)
-        ? version.docs
-        : Object.values(version.docs);
+      const versionDocsArray = Object.values(version.docs);
+      allItems.push(...versionDocsArray);
+    });
+  } else {
+    console.error("[Debug] Could not find 'docsPluginData' or 'docsPluginData.versions'.");
+    return { recentDocs: [], totalDocsCount: 0 };
+  }
 
-      versionDocsArray.forEach(doc => {
-        if (
-          doc.permalink &&
-          doc.permalink.startsWith('/docs/') &&
-          doc.id !== 'intro/index' && 
-          !doc.permalink.endsWith('/category')
-        ) {
-          allDocs.push(doc);
-        }
-      });
-    }); // 여기가 원래 53번째 줄의 끝입니다.
-  } // 여기가 원래 54번째 줄입니다. 에러 메시지에 있던 불필요한 `}>`를 제거했습니다.
+  // --- 새로운 디버깅 단계 ---
+  // 필터링 전, 수집된 모든 아이템의 전체 내용을 콘솔에 출력합니다.
+  console.log(`[Debug] Found ${allItems.length} total items before filtering. Dumping all item details below:`);
+  allItems.forEach((item, index) => {
+    console.log(`[Debug] Item #${index}:`, item);
+  });
+  // --- 디버깅 단계 끝 ---
 
-  const sortedDocs = [...allDocs].sort((a, b) => {
-    const timeA = a.lastUpdatedAt ?? 0;
-    const timeB = b.lastUpdatedAt ?? 0;
-    return timeB - timeA; // 내림차순 (최신순)
+  const filteredDocs = allItems.filter(doc => 
+    typeof doc.lastUpdatedAt === 'number' && doc.permalink
+  );
+  
+  console.log(`[Debug] After filtering, ${filteredDocs.length} docs remained.`);
+
+  const sortedDocs = [...filteredDocs].sort((a, b) => {
+    return b.lastUpdatedAt - a.lastUpdatedAt;
   });
 
+  const recentDocs = sortedDocs.slice(0, MAX_DOCS_TO_SHOW_FROM_HOOK);
+
+  console.log('[Debug] Final recentDocs to show:', recentDocs);
+
   return {
-    recentDocs: sortedDocs.slice(0, MAX_DOCS_TO_SHOW_FROM_HOOK),
+    recentDocs,
     totalDocsCount: sortedDocs.length,
   };
 }
