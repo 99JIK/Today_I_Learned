@@ -279,14 +279,53 @@ table th {
 }
 
 
-h2[class*="title_f1Hy"], /* title_f1Hy를 포함하는 모든 h2 */
-.blogPostTitle_node_modules-\@docusaurus-theme-classic-lib-theme-BlogPostItem-Header-Title-styles-module a, /* 기본 테마의 블로그 아이템 제목 링크 */
-article header h2, /* 일반적인 블로그 아이템 헤더의 h2 */
-.markdown h1 /* 블로그 게시물 상세 페이지의 메인 제목 */ {
-  font-size: 1.8rem !important; /* 원하는 크기로 조정 (예: 1.8rem) */
-  margin-bottom: 0.75rem !important; /* 아래 여백 조정 */
+h2[class*="title_f1Hy"], 
+.blogPostTitle_node_modules-\@docusaurus-theme-classic-lib-theme-BlogPostItem-Header-Title-styles-module a,
+article header h2,
+.markdown h1 {
+  font-size: 1.8rem !important; 
+  margin-bottom: 0.75rem !important;
 }
 h1[class*="title_f1Hy"]{
-  font-size: 2.2rem !important; /* 원하는 크기로 조정 (예: 1.8rem) */
-  margin-bottom: 0.75rem !important; /* 아래 여백 조정 */
+  font-size: 2.2rem !important; 
+  margin-bottom: 0.75rem !important;
+}
+
+.katex-display,
+.katex {       
+  max-width: 100%;
+  overflow-x: auto; 
+  overflow-y: hidden;
+  display: inline-block;
+  vertical-align: middle;
+  white-space: normal;
+}
+
+.katex-display {
+  display: block;
+  text-align: center;
+  padding: 0.5em 0;
+}
+
+table td .katex-display {
+  padding: 0;
+}
+
+.katex-html{
+  display: none;
+}
+
+.katex::-webkit-scrollbar {
+  height: 4px;
+}
+.katex::-webkit-scrollbar-track {
+  background: var(--ifm-background-surface-color);
+  border-radius: 2px;
+}
+.katex::-webkit-scrollbar-thumb {
+  background-color: var(--ifm-color-emphasis-300);
+  border-radius: 2px;
+}
+.katex::-webkit-scrollbar-thumb:hover {
+  background-color: var(--ifm-color-emphasis-500);
 }

@@ -2,6 +2,9 @@ import { themes as prismThemes } from 'prism-react-renderer';
 import type { Config } from '@docusaurus/types';
 import type * as Preset from '@docusaurus/preset-classic';
 
+import remarkMath from 'remark-math';
+import rehypeKatex from 'rehype-katex';
+
 const config: Config = {
   title: 'JIK\'s TIL',
   tagline: 'From Yesterday\'s Insights to Today\'s Wisdom: My Learning  Chronicle.',
@@ -44,13 +47,16 @@ const config: Config = {
           blogSidebarTitle: 'All posts',
           blogSidebarCount: 'ALL',
           postsPerPage: 10, feedOptions: { type: 'all', copyright: `Copyright © ${new Date().getFullYear()} JIK\'s TIL` },
+          remarkPlugins: [remarkMath],
+          rehypePlugins: [rehypeKatex],
         },
         docs: {
           sidebarPath: './sidebars.ts',
-          editUrl: 'https://github.com/99jik/Today-I-Learned/docs/',
           routeBasePath: 'docs',
           showLastUpdateTime: true,
-          showLastUpdateAuthor: true,
+          // docs 플러그인 옵션에 remarkMath 추가
+          remarkPlugins: [remarkMath],
+          rehypePlugins: [rehypeKatex],
         },
         theme: {
           customCss: './src/css/custom.css',
@@ -79,8 +85,19 @@ const config: Config = {
           blogSidebarTitle: 'Paper I Read',
           blogSidebarCount: 'ALL',
           postsPerPage: 10, feedOptions: { type: 'all', copyright: `Copyright © ${new Date().getFullYear()} JIK\'s TIL` },
+          remarkPlugins: [remarkMath],
+          rehypePlugins: [rehypeKatex],
         },
   ]],
+  stylesheets: [
+    {
+      href: 'https://cdn.jsdelivr.net/npm/katex@0.13.24/dist/katex.min.css',
+      type: 'text/css',
+      integrity:
+        'sha384-odtC+0UGzzFL/6PNoE8rX/SPcQDXBJ+uRepguP4QkPCm2LBxH3FA32PN8a+NA+XH',
+      crossorigin: 'anonymous',
+    },
+  ],
   themeConfig: {
     navbar: {
       title: 'JIK\'s TIL',
