@@ -65,12 +65,12 @@ const config: Config = {
           trackingID: 'G-14RM4LH9N5',
           anonymizeIP: true,
         },
-        // sitemap: { // 사이트맵 생성 시
-        //   changefreq: 'weekly',
-        //   priority: 0.5,
-        //   ignorePatterns: ['/tags/**'],
-        //   filename: 'sitemap.xml',
-        // },
+        sitemap: {
+          changefreq: 'weekly',
+          priority: 0.5,
+          ignorePatterns: ['/tags/**'],
+          filename: 'sitemap.xml',
+        },
       }),
     ],
   ],
