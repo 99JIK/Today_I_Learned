@@ -9,7 +9,7 @@ import Heading from '@theme/Heading';
 import MainArticleItem from '@site/src/components/HomepageItems/MainArticleItem';
 import KeywordsAdItem from '@site/src/components/HomepageItems/KeywordsAdItem';
 import AdPlaceholderItem from '@site/src/components/HomepageItems/AdPlaceholderItem';
-import LatestNewsItem from '@site/src/components/HomepageItems/LatestNewsItem';
+import FeelingLuckyItem from '@site/src/components/HomepageItems/FeelingLuckyItem';
 import GuideItem from '@site/src/components/HomepageItems/GuideItem';
 
 import styles from './index.module.css';
@@ -49,7 +49,7 @@ const gridItemLayout = {
   mainArticle: styles.gridMainArticle, // 예: grid-column: span 7; grid-row: span 2;
   keywordsAd: styles.gridKeywordsAd,   // 예: grid-column: span 5; grid-row: span 1;
   adPlaceholder: styles.gridAdPlaceholder, // 예: grid-column: span 5; grid-row: span 1; (키워드 광고 아래)
-  latestNews: styles.gridLatestNews,   // 예: grid-column: span 7; grid-row: span 2;
+  feelingLucky: styles.gridLatestNews,   // 예: grid-column: span 7; grid-row: span 2;
   guide: styles.gridGuide,             // 예: grid-column: span 5; grid-row: span 2;
 };
 
@@ -77,7 +77,7 @@ function NewspaperHomepageLayout(): JSX.Element {
           linkUrl={homepageData.adPlaceholder?.linkUrl}
         />
 
-        <LatestNewsItem gridClasses={gridItemLayout.latestNews} />
+        <FeelingLuckyItem gridClasses={gridItemLayout.feelingLucky} /> 
         <GuideItem {...homepageData.guide} gridClasses={gridItemLayout.guide} />
       </div>
     </div>
