@@ -2,8 +2,6 @@
 
 책 [소프트웨어 스펙의 모든 것]을 읽고 정리한 문서이다.
 
-업데이트 했음
-
 ![image-20250512151043281](./img/Everything-About-Software-Specifications/image-20250512151043281.png)
 
 ## 소프트웨어 스펙의 개요
