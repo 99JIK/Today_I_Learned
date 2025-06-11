@@ -141,13 +141,12 @@ const config: Config = {
       textColor: '#091E42',
       isCloseable: true,
     },
-    // algolia: { // Algolia DocSearch 사용 시 (신청 및 설정 필요)
-    //   appId: '',
-    //   apiKey: '',
-    //   indexName: '',
-    //   // optional:
-    //   contextualSearch: true,
-    // },
+    algolia: {
+      appId: 'M0K8OUDJUD',
+      apiKey: '47a8935c75521e24ddd40a579d7a5c13',
+      indexName: 'til-jungin',
+      contextualSearch: true,
+    },
   } satisfies Preset.ThemeConfig,
 };
 export default config;
