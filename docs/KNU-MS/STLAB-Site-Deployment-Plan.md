@@ -4,7 +4,7 @@ title: "STLAB. Site 배포 계획 및 유지 보수 계획"
 
 ## Site 개발 및 배포
 
-Software Testing Lab의 소개 및 Contact 사이트의 리모델링을 맡게 되었다.
+Software Testing Lab의 소개 및 Contact 사이트의 리모델링, Migration을 맡게 되었다.
 
 개발한 내용과 앞으로의 유지보수를 위해서 문서를 작성하게 되었다.
 
@@ -125,7 +125,7 @@ Software Testing Lab의 소개 및 Contact 사이트의 리모델링을 맡게 �
 
 ### 접속 테스트
 
--   **내부망 테스트:** 웹 브라우저에서 `http://<NAS_INNER_IP_ADDRESS>/SITE` (가상호스트 미사용시) 또는 `http://<설정한 HOST_NAME>` (가상호스트 사용시, PC의 hosts 파일 수정 필요 가능성) 으로 접속한다.
+-   **내부망 테스트:** 웹 브라우저에서 `http://<NAS_INNER_IP_ADDRESS>/SITE` (가상호스트 미사용시) 또는 `http://<설정한 HOST_NAME>` (가상 호스트 사용 시, PC의 hosts 파일 수정 필요 가능성) 으로 접속한다.
 -   **외부망 테스트:** 스마트폰의 모바일 데이터(Wi-Fi 끄고)를 이용하거나 다른 네트워크 환경에서 설정한 외부 접속 주소(예: `https://docs.mydomain.com` 또는 `https://myname.synology.me`)로 접속하여 사이트가 잘 보이는지, HTTPS 연결(자물쇠 아이콘)이 정상적인지 확인한다.
 
 ### 문제 해결 팁
@@ -145,9 +145,9 @@ Software Testing Lab의 소개 및 Contact 사이트의 리모델링을 맡게 �
 
 ### 가능한 시나리오 및 설정 방법
 
-### 외부 CI/CD 서비스 (예: GitHub Actions, GitLab CI) 활용
+### 외부 CI/CD 서비스 활용
 
-이 방법은 빌드 과정을 NAS 외부의 전문 CI/CD 플랫폼에서 처리하고, 빌드 결과물만 NAS로 배포하는 방식이다. NAS의 부하를 줄이고, 안정적이며 빠른 빌드가 가능하다.
+이 방법은 빌드 과정을 NAS 외부의 전문 CI/CD 플랫폼(GitHub Actions)에서 처리하고, 빌드 결과물만 NAS로 배포하는 방식이다. NAS의 부하를 줄이고, 안정적이며 빠른 빌드가 가능하다.
 
 -   작동 방식
     1.  Docusaurus 소스 코드를 GitHub 또는 GitLab과 같은 Git 호스팅 서비스에 푸시(push)한다.
@@ -331,3 +331,10 @@ jobs:
 
 ### 실제 발생 오류 및 해결상황
 
+
+
+### 추가 요구사항
+
+[ ] 교수님 설명 캐러셀이 교수님께 조금 부담스럽다는 평가를 받아 사진 이미지를 지우는 방향으로 변경한다.
+[ ] 논문 및 특허의 제목이 가시성이 고려되지 않아 UI/UX 측면으로 좋지 못해 수정할 예정이다.
+[ ] 메인 캐러셀에 중점 연구 페이지를 생성한다. 하나는 덕엽이 형과 내 연구 방향성, 나머지 하나는 승모님 방향성의 페이지로 생성할 예정이다.
