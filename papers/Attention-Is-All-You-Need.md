@@ -9,7 +9,6 @@ tags: ["Transformer", "Attention Mechanism", "Self-Attention", "Multi-Head Atten
 # Attention Is All You Need
 
 ## 논문 정보
-
 -   **제목 (Title):** Attention Is All You Need
 -   **저자 (Authors) 및 소속 (Affiliations):**
     -   Ashish Vaswani (Google Brain)
@@ -29,16 +28,13 @@ tags: ["Transformer", "Attention Mechanism", "Self-Attention", "Multi-Head Atten
 -   **초록 (Abstract):**
     지배적인 시퀀스 변환 모델은 인코더와 디코더를 포함하는 복잡한 순환 신경망(RNN) 또는 컨볼루션 신경망(CNN)에 기반한다. 최고 성능 모델들은 인코더와 디코더를 어텐션 메커니즘으로 연결한다. 본 논문은 순환과 컨볼루션을 완전히 배제하고 오직 어텐션 메커니즘에만 기반한 새로운 단순한 네트워크 아키텍처인 'Transformer'를 제안한다. 두 가지 기계 번역 작업에 대한 실험 결과, 이 모델들은 품질 면에서 우수하며 병렬화 가능성이 더 높고 훈련 시간이 훨씬 적게 소요됨을 보여준다. WMT 2014 영어-독일어 번역 작업에서 28.4 BLEU를 달성하여 기존 최고 결과(앙상블 포함)를 2 BLEU 이상 개선했다. WMT 2014 영어-프랑스어 번역 작업에서는 8개 GPU에서 3.5일 훈련 후 41.8 BLEU라는 새로운 단일 모델 최고 기록을 세웠으며, 이는 기존 최고 모델들의 훈련 비용의 극히 일부에 해당한다. Transformer는 대규모 및 제한된 훈련 데이터 모두에서 영어 구문 분석 작업에 성공적으로 적용되어 다른 작업에도 잘 일반화됨을 보여준다.
 -   **주요 연구 내용 (Main Research Content/Methodology):**
-
     -   순환 신경망(RNN)과 컨볼루션 신경망(CNN)을 사용하지 않고, 전적으로 어텐션 메커니즘에 기반한 'Transformer'라는 새로운 시퀀스 변환 모델 아키텍처를 제안
-
     -   인코더-디코더 구조를 가지며, 각 인코더와 디코더는 여러 개의 동일한 레이어를 쌓아 구성
     -   각 레이어는 '멀티헤드 셀프 어텐션(Multi-Head Self-Attention)' 메커니즘과 '위치별 피드포워드 네트워크(Position-wise Feed-Forward Network)'라는 두 개의 주요 하위 레이어로 구성
     -   '스케일드 닷 프로덕트 어텐션(Scaled Dot-Product Attention)'을 기본 어텐션 함수로 사용
     -   여러 어텐션 헤드를 병렬로 사용하여 서로 다른 표현 부분 공간(representation subspaces)에서 정보를 동시에 처리하는 '멀티헤드 어텐션(Multi-Head Attention)' 개념을 도입
     -   입력 시퀀스의 토큰 순서 정보를 모델에 제공하기 위해 사인(sine)과 코사인(cosine) 함수를 사용한 '위치 인코딩(Positional Encoding)'을 입력 임베딩에 추가
     -   레이어 정규화(Layer Normalization)와 잔차 연결(Residual Connections)을 각 하위 레이어에 적용
-
 -   **주요 결과 및 결론 (Key Findings and Conclusion):**
     -   Transformer 모델은 WMT 2014 영어-독일어 번역 작업에서 28.4 BLEU 점수를 획득하여 기존 최고 성능 모델들을 능가
     -   WMT 2014 영어-프랑스어 번역 작업에서 단일 모델로 41.8 BLEU 점수를 기록하며 새로운 최고 수준(state-of-the-art)을 달성 

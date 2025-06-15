@@ -9,17 +9,11 @@ tags: [Web Testing, Graphic User Interface Testing, Front-End, Survey, Search-Ba
 # A Survey on Web Testing: On the Rise of AI and Applications in Industry
 
 ## 논문 정보
-
 -   저자 (Authors): Iva Kertusha¹, Gebremariem Assres¹, Onur Duman², Andrea Arcuri¹
-
 -   소속 (Affiliations): ¹Kristiania University College, Norway; ²Glasgow Caledonian University, Glasgow, UK
-
 -   게재처 (Publication Venue): arXiv (cs.SE)
-
 -   제출일 (Submission Date): 2025년 3월 7일 (arXiv 등록일 기준, 논문 내용은 2014-2024년 검토)
-
 -   arXiv ID: arXiv:2503.05378v1
-
 -   키워드 (Keywords): 웹 테스팅(web testing), GUI 테스팅(GUI testing), 프론트엔드(front-end), 설문 조사(survey), SBST(Search-Based Software Testing), AI(Artificial Intelligence), 퍼징(fuzzing)
 
 <!-- truncate -->

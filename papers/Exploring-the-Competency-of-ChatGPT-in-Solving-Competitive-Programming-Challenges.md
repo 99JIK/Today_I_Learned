@@ -14,19 +14,12 @@ tags: [ChatGPT, Problem Solving, Competitive Programming, Programming challenges
 -   소속 (Affiliations): Institute of Information Technology, Noakhali Science and Technology University, Noakhali, Bangladesh
 -   교신 저자 (Corresponding Author):Tasnim Rahman (tasnim.iit@nstu.edu.bd)
 -   학술지 (Journal): International Journal of Advanced Trends in Computer Science and Engineering (IJATCSE)
-
 -   볼륨 (Volume) 및 호 (No.): Volume 13, No.1
-
 -   ISSN: 2278-3091
-
 -   DOI: https://doi.org/10.30534/ijatcse/2024/031312024
-
 -   접수일 (Received Date): 2023년 12월 20일
-
 -   채택일 (Accepted Date): 2024년 1월 21일
-
 -   발행일 (Published Date): 2024년 2월 06일
-
 -   키워드 (Keywords): ChatGPT, 문제 해결(Problem-solving), 경쟁적 프로그래밍(Competitive programming), 프로그래밍 챌린지(Programming challenges)
 
 <!-- truncate -->
